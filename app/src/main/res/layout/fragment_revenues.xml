@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@mipmap/center_logo" />
+
+    <arabulkazan.albatros.com.arabulkazan.CustomUI.MyCustomButton
+        style="@style/button_phenomena_regular"
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:layout_toStartOf="@+id/imageView2"
+        android:drawableTop="@drawable/download"
+        android:textSize="18sp"
+        android:text="İndir Kazan" />
+
+    <arabulkazan.albatros.com.arabulkazan.CustomUI.MyCustomButton
+        style="@style/button_phenomena_regular"
+        android:id="@+id/btn_izle_kazan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:drawableTop="@drawable/eye"
+        android:elevation="0dp"
+        android:textSize="18sp"
+        android:text="İzle Kazan" />
+
+    <arabulkazan.albatros.com.arabulkazan.CustomUI.MyCustomButton
+        style="@style/button_phenomena_regular"
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/install"
+        android:text="Yükle Kazan"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_toRightOf="@+id/btn_izle_kazan"
+        android:textSize="18sp"
+
+        android:layout_toEndOf="@+id/btn_izle_kazan" />
+</RelativeLayout>

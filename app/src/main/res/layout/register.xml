@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_dropdown_light_frame"
+        android:padding="15dp"
+        android:phoneNumber="true"
+        android:text="@string/wellcome_app"
+        android:textAlignment="center"
+        android:textColor="#664411"
+        android:textSize="18sp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editTc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="T.C. Kimlik Numaranız"
+                    android:inputType="numberSigned"
+                    android:maxLength="11"
+                    android:text="15287263802" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editAdi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Adınız"
+                    android:inputType="textCapWords"
+                    android:maxLength="50"
+                    android:text="ömer" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editSoyadi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Soyadınız"
+                    android:inputType="textCapWords"
+                    android:maxLength="50"
+                    android:text="çakıcı" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/sp_Iller"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editCepTel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Cep Telefonunuz Örn: 5431234567"
+                    android:inputType="numberSigned"
+                    android:maxLength="10"
+                    android:text="5434697533" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editSifre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Şifrenizi Yazınız"
+                    android:inputType="textPassword"
+                    android:maxLength="32" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editRef"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Referans Numaranız(Varsa)"
+                    android:inputType="numberSigned"
+                    android:maxLength="10" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnKaydet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kayıt Ol" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

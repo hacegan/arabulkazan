@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:title="Size Özel">
+        <menu>
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="Bilgilerim" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/center_logo"
+            android:title="Kazanç Fırsatları" />
+        <item
+            android:id="@+id/isortk"
+            android:icon="@drawable/center_logo"
+            android:title="İş Ortaklarım " />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/center_logo"
+            android:title="Temsilcilerim" />
+
+
+        </menu>
+    </item>
+
+    <item android:title="İşletme Mağazam">
+        <menu>
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Alışveriş" />
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Toplu SMS" />
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Online Eğitim" />
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Online Fatura" />
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Online Sigorta" />
+            <item
+
+            android:icon="@drawable/center_logo"
+            android:title="Online Rent A Car" />
+
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Online Bilet" />
+
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Duyurular" />
+
+        </menu>
+    </item>
+
+
+    <item android:title="Emlak Alsatkirala">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/center_logo"
+                android:title="Konut" />
+            <item
+                android:id="@+id/topsms"
+                android:icon="@drawable/center_logo"
+                android:title="İşyeri" />
+            <item
+                android:id="@+id/onegitim"
+                android:icon="@drawable/center_logo"
+                android:title="Arsa" />
+            <item
+                android:id="@+id/onfat"
+                android:icon="@drawable/center_logo"
+                android:title="Bina" />
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Turistik Tesis" />
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Devremülk" />
+        </menu>
+    </item>
+
+
+    <item android:title="Alışveriş">
+        <menu>
+
+        </menu>
+
+    </item>
+
+
+    <group android:checkableBehavior="single">
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Yardım ve Destek" />
+            <item
+
+                android:icon="@drawable/center_logo"
+                android:title="Çıkış Yap" />
+    </group>
+
+
+</menu>

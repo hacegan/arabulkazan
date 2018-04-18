@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Ara Bul İzle Kazan</string>
+    <string name="title_home">Ana Sayfa</string>
+    <string name="title_revenue">Kazanç Sayfam</string>
+    <string name="title_mywallet">Cüzdanım</string>
+    <string name="title_myprofile">Bilgilerim</string>
+    <string name="wellcome_app">AraBulKazan\'a hoşgeldiniz!</string>
+
+
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+    
+</resources>
