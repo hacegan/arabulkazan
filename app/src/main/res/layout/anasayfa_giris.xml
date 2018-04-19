@@ -29,11 +29,19 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="1dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""
+            android:background="@drawable/turuncu_pembe_et"
 
+            />
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+
+    />
 
     </LinearLayout>
 
@@ -54,22 +62,55 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="1dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""
+            android:background="@drawable/turuncu_pembe_et"
+
+            />
 
 
     </LinearLayout>
 
-    <Button
+  <!--  <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Şifremi Unuttum"
         android:layout_marginLeft="200dp"
-        android:textColor="#FF0000"
+        android:textColor="@drawable/turuncu_pembe_et"
         android:background="@null"
+
+        />-->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <com.lightfire.gradienttextcolor.GradientTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:text="ŞİFREMİ UNUTTUM"
+        android:textColor="#d83737"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:gradientEnd="#BA2742"
+        app:gradientStart="#E34F20"
+
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/balik"
+        android:layout_marginLeft="10dp"
+        />
+
+</LinearLayout>
+
 
     <Button
         android:layout_width="match_parent"
@@ -77,8 +118,10 @@
         android:text="GİRİŞ"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
         android:textColor="#FFFFFF"
-        android:background="#FF9999"
+        android:background="@drawable/turuncu_pembe_btn_et"
+
         />
 
 

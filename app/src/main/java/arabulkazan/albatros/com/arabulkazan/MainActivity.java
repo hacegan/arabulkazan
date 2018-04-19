@@ -50,8 +50,8 @@ private static ImageView imageView;
 
     @Override
     protected void onStop() {
-        sliderShow.stopAutoCycle();
         super.onStop();
+       // sliderShow.stopAutoCycle();
     }
 
     private TextView mTextMessage;
@@ -146,7 +146,7 @@ private static ImageView imageView;
         }
        else
         {
-         /*   Register register=new Register();
+           /*Register register=new Register();
             android.support.v4.app.FragmentTransaction  transaction = getSupportFragmentManager().beginTransaction();
             transaction.add(R.id.frameLayout,register);
             transaction.commit();*/
@@ -157,35 +157,14 @@ private static ImageView imageView;
             frameAnaSayfa.setVisibility(View.GONE);
             navigation.setVisibility(View.VISIBLE);
 
-           /*  sliderShow = (SliderLayout) findViewById(R.id.slider);
-            TextSliderView textSliderView = new TextSliderView(this);
-            textSliderView
-                    .description("Tıkla Kazan")
-                    .image("https://www.automzen.com/upload/banner2.jpg");
 
-            sliderShow.addSlider(textSliderView);*/
 
             setupActionBar();
 
 
 
         mDrawerLayout= (DrawerLayout) findViewById(R.id.container);
-        //mToggle=new ActionBarDrawerToggle(this,mDrawerLayout,R.string.drawer_open,R.string.drawer_close);
-        //mDrawerLayout.addDrawerListener(mToggle);
-        //mToggle.syncState();
 
-//            mToggle.setDrawerIndicatorEnabled(false);
-//
-//       /*     mToggle.setToolbarNavigationClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    mDrawerLayout.openDrawer(GravityCompat.START);
-//                }
-//            });*/
-//mToggle.setToolbarNavigationClickListener(this);
-//
-//            mToggle.setHomeAsUpIndicator(R.drawable.menu_filled);
-//
 
 
 

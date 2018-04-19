@@ -40,6 +40,11 @@ dependencies {
     compile 'com.ikimuhendis:ldrawer:0.1'
     // compile 'com.github.Yalantis:Context-Menu.Android:1.0.8'
 
+
+    implementation 'com.github.Yalantis:Context-Menu.Android:1.0.5'
+
+    compile 'com.github.lightfire:Android-Gradient-Text-Color:b0047755f7'
+
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:design:26.+'
     compile 'com.android.support:support-vector-drawable:26.+'
