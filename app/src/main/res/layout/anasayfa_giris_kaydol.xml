@@ -3,34 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFCCCC"
+    android:background="@mipmap/ana"
+
     >
 
 
     <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo"
-        android:layout_marginTop="130dp"
-        />
+        android:layout_height="72dp"
+        android:layout_marginTop="100dp"
+        android:fitsSystemWindows="true"
+        app:srcCompat="@mipmap/logo_calismayuzeyi1" />
 
     <Button
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_button"
-        android:text="GİRİŞ YAP"
+        android:layout_height="100dp"
         android:layout_marginLeft="50dp"
-        android:backgroundTint="#FF0000"
+        android:layout_marginTop="30dp"
+        android:background="@mipmap/giris_kaydol_btnlar"
+       android:hint="GİRİŞ YAP"
+        android:textAlignment="center"
+
         android:textColor="#FFFFFF"
+
         />
 
     <Button
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_button"
-        android:text="Kayıt Ol"
+        android:background="@mipmap/giris_kaydol_btnlar"
+        android:hint="KAYIT OL"
         android:layout_marginLeft="50dp"
         android:textColor="#FF3333"
         />

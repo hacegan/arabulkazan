@@ -69,6 +69,30 @@ public class Data {
     }
 
 
+    public static void kazancim(Activity act, String tc,String pass,String tarih1,String tarih2, final OnPostExecuteListener postExecuteListener) {
+
+        ArrayList<NameValuePair> mr = new ArrayList<>();
+        mr.add(new BasicNameValuePair("act", "kayithar"));
+        mr.add(new BasicNameValuePair("tc", tc));
+        mr.add(new BasicNameValuePair("pass", pass));
+        mr.add(new BasicNameValuePair("tarih1", tarih1));
+        mr.add(new BasicNameValuePair("tarih2", tarih2));
+
+        new HttpGonderim(act, Constants.REST_URL, mr, false, new HttpGonderim.OnPostExecuteListener() {
+            @Override
+            public void onPostExecute(String result) {
+
+                if (postExecuteListener != null) {
+                    postExecuteListener.onPostExecute(result);
+
+                }
+            }
+        }).execute();
+
+
+
+    }
+
 
 
 }

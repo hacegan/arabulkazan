@@ -28,10 +28,10 @@ public class Main extends android.support.v4.app.Fragment {
         View root=inflater.inflate(R.layout.fragment_main_page, container, false);
 
      //   TextView txtMyReferans=(TextView)root.findViewById(R.id.main_txtReferansNum);
-        TextView txtWellcomeMessage=(TextView)root.findViewById(R.id.main_text_header);
+      //  TextView txtWellcomeMessage=(TextView)root.findViewById(R.id.main_text_header);
 
     //    txtMyReferans.setText("Referans Numaranız:"+ UI.getString(Main.this.getActivity(),"myReferans"));
-        txtWellcomeMessage.setText("Hoşgeldin:"+ UI.getString(Main.this.getActivity(),"adi")+" "+UI.getString(Main.this.getActivity(),"soyadi")+"!");
+     //   txtWellcomeMessage.setText("Hoşgeldin:"+ UI.getString(Main.this.getActivity(),"adi")+" "+UI.getString(Main.this.getActivity(),"soyadi")+"!");
 
         sliderShow = (SliderLayout)root.findViewById(R.id.slider);
         TextSliderView textSliderView = new TextSliderView(getActivity());

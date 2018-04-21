@@ -7,6 +7,12 @@ public class Mywallet_Pojo {
     private String tarih;
 
 
+    public Mywallet_Pojo(String tur, String tutar, String tarih) {
+        this.tur = tur;
+        this.tutar = tutar;
+        this.tarih = tarih;
+    }
+
     public String getTur() {
         return tur;
     }

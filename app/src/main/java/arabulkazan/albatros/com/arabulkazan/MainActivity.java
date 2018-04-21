@@ -94,6 +94,7 @@ private static ImageView imageView;
         adapter.addFragment(revenuesFrag);
         adapter.addFragment(myWalletFrag);
         viewPager.setAdapter(adapter);
+
     }
 
     private void setupActionBar()
