@@ -18,7 +18,7 @@ public class Data {
         void onPostExecute(String result);
     }
 
-    public static void register(Activity act, String tc, String adi, String soyadi, String telefon, String pass,String ref,String sehir, final OnPostExecuteListener postExecuteListener) {
+    public static void register(Activity act, String tc, String adi, String soyadi, String telefon, String pass, String ref, String sehir, final OnPostExecuteListener postExecuteListener) {
 
         ArrayList<NameValuePair> nm = new ArrayList<>();
         nm.add(new BasicNameValuePair("act", "newMember"));
@@ -46,7 +46,7 @@ public class Data {
 
     //mPostExecuteListener = null;
 
-    public static void cuzdanim(Activity act, String tc,String pass,String tarih1,String tarih2, final OnPostExecuteListener postExecuteListener) {
+    public static void cuzdanim(Activity act, String tc, String pass, String tarih1, String tarih2, final OnPostExecuteListener postExecuteListener) {
         ArrayList<NameValuePair> mw = new ArrayList<>();
         mw.add(new BasicNameValuePair("act", "getMyRevenueList"));
         mw.add(new BasicNameValuePair("tc", tc));
@@ -69,7 +69,7 @@ public class Data {
     }
 
 
-    public static void kazancim(Activity act, String tc,String pass,String tarih1,String tarih2, final OnPostExecuteListener postExecuteListener) {
+    public static void kazancim(Activity act, String tc, String pass, String tarih1, String tarih2, final OnPostExecuteListener postExecuteListener) {
 
         ArrayList<NameValuePair> mr = new ArrayList<>();
         mr.add(new BasicNameValuePair("act", "kayithar"));
@@ -90,9 +90,7 @@ public class Data {
         }).execute();
 
 
-
     }
-
 
 
 }

@@ -38,10 +38,11 @@ import arabulkazan.albatros.com.arabulkazan.R;
  * Created by PC on 29.03.2018.
  */
 
-public class MyWallet extends android.support.v4.app.Fragment   {
+public class MyWallet extends android.support.v4.app.Fragment {
 
-    private  TextView tur,tutar,tarih,tarih1,tarih2;;
-private Button btn;
+    private TextView tur, tutar, tarih, tarih1, tarih2;
+    ;
+    private Button btn;
     private List<Mywallet_Pojo> czdnList = new ArrayList<>();
     private RecyclerView recyclerView;
     private CuzdanimAdapter mAdapter;
@@ -52,12 +53,12 @@ private Button btn;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        final View rootView= inflater.inflate(R.layout.fragment_mywallet, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_mywallet, container, false);
 
-        tarih1=rootView.findViewById(R.id.cuzdanimtarih1);
-        tarih2=rootView.findViewById(R.id.cuzdanimtarih2);
-        recyclerView=rootView.findViewById(R.id.cuzdanrecview);
-        btn=rootView.findViewById(R.id.cuzdanlistele);
+        tarih1 = rootView.findViewById(R.id.cuzdanimtarih1);
+        tarih2 = rootView.findViewById(R.id.cuzdanimtarih2);
+        recyclerView = rootView.findViewById(R.id.cuzdanrecview);
+        btn = rootView.findViewById(R.id.cuzdanlistele);
 
         mAdapter = new CuzdanimAdapter(czdnList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(rootView.getContext());
@@ -155,13 +156,12 @@ private Button btn;
             public void onClick(View view) {
 
 
-                if(!tarih1.getText().toString().contains("seciniz") && !tarih2.getText().toString().contains("seciniz")){
+                if (!tarih1.getText().toString().contains("seciniz") && !tarih2.getText().toString().contains("seciniz")) {
 
                     Data.cuzdanim(MyWallet.this.getActivity(), "15287263802", "43270ea45b9c4800f084badd5c610f19c81cb865", "2018-01-18", "2018-04-18", new Data.OnPostExecuteListener() {
                         @Override
                         public void onPostExecute(String result) {
-                            final Mywallet_Pojo[] sonuc=new Gson().fromJson(result,Mywallet_Pojo[].class);
-
+                            final Mywallet_Pojo[] sonuc = new Gson().fromJson(result, Mywallet_Pojo[].class);
 
 
                             try {
@@ -174,48 +174,41 @@ private Button btn;
                                 tarih.setText(sonuc[0].getTarih());  */
 
 
-czdnList.clear();
-for(int i=0;i<sonuc.length;i++){
+                                czdnList.clear();
+                                for (int i = 0; i < sonuc.length; i++) {
 
-    Mywallet_Pojo pojo=new Mywallet_Pojo(sonuc[i].getTur(),sonuc[i].getTarih(),sonuc[i].getTutar());
-    czdnList.add(pojo);
-    mAdapter.notifyDataSetChanged();
+                                    Mywallet_Pojo pojo = new Mywallet_Pojo(sonuc[i].getTur(), sonuc[i].getTarih(), sonuc[i].getTutar());
+                                    czdnList.add(pojo);
+                                    mAdapter.notifyDataSetChanged();
 
 
-}
+                                }
 
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
 
 
-
                         }
                     });
 
 
+                } else {
+                    UI.showErrorDialog(MyWallet.this.getActivity(), "Hata", "Lütfen iki tarih aralığını seçiniz", null);
                 }
-
-                else{
-                    UI.showErrorDialog(MyWallet.this.getActivity(),"Hata","Lütfen iki tarih aralığını seçiniz",null);
-                }
-
 
 
             }
         });
 
 
-
-
         return rootView;
-
 
 
     }
 
     public void onDestroyView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View rootView= inflater.inflate(R.layout.fragment_mywallet, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_mywallet, container, false);
         super.onDestroyView();
     }
 
