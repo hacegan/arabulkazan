@@ -1,14 +1,17 @@
 package arabulkazan.albatros.com.arabulkazan.Fragments;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,7 +106,7 @@ public class MyWallet extends android.support.v4.app.Fragment {
                                 month += 1;
                                 // year, month ve dayOfMonth değerleri seçilen tarihin değerleridir.
                                 // Edittextte bu değerleri gösteriyoruz.
-                                tarih1.setText(dayOfMonth + "-" + month + "-" + year);
+                                tarih1.setText(year + "-" + month + "-" + dayOfMonth);
                             }
                         }, yil, ay, gun);
                 // datepicker açıldığında set edilecek değerleri buraya yazıyoruz.
@@ -136,7 +139,7 @@ public class MyWallet extends android.support.v4.app.Fragment {
                                 month += 1;
                                 // year, month ve dayOfMonth değerleri seçilen tarihin değerleridir.
                                 // Edittextte bu değerleri gösteriyoruz.
-                                tarih2.setText(dayOfMonth + "-" + month + "-" + year);
+                                tarih2.setText(year + "-" + month + "-" + dayOfMonth);
                             }
                         }, yil, ay, gun);
                 // datepicker açıldığında set edilecek değerleri buraya yazıyoruz.
@@ -154,13 +157,26 @@ public class MyWallet extends android.support.v4.app.Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+             //   czdnList.clear();
 
                 if (!tarih1.getText().toString().contains("seciniz") && !tarih2.getText().toString().contains("seciniz")) {
 
-                    Data.cuzdanim(MyWallet.this.getActivity(), "15287263802", "43270ea45b9c4800f084badd5c610f19c81cb865", "2018-01-18", "2018-04-18", new Data.OnPostExecuteListener() {
+                    Data.cuzdanim(MyWallet.this.getActivity(), "15287263802", "43270ea45b9c4800f084badd5c610f19c81cb865", tarih1.getText().toString(), tarih2.getText().toString(), new Data.OnPostExecuteListener() {
                         @Override
                         public void onPostExecute(String result) {
+
+                            if(result.contains("Kayıt Bulanamadı")){
+                                czdnList.clear();
+                                recyclerView.setAdapter(null);
+                                mAdapter.notifyDataSetChanged();
+                                UI.showErrorDialog(MyWallet.this.getActivity(), "Hata", "Kayıt Bulanamadı", null);
+                                return;
+                            }
+
+                            if(!czdnList.isEmpty()) czdnList.clear();
+                            mAdapter=new CuzdanimAdapter(czdnList);
+recyclerView.setAdapter(mAdapter);
+                            mAdapter.notifyDataSetChanged();
                             final Mywallet_Pojo[] sonuc = new Gson().fromJson(result, Mywallet_Pojo[].class);
 
 
@@ -174,7 +190,7 @@ public class MyWallet extends android.support.v4.app.Fragment {
                                 tarih.setText(sonuc[0].getTarih());  */
 
 
-                                czdnList.clear();
+
                                 for (int i = 0; i < sonuc.length; i++) {
 
                                     Mywallet_Pojo pojo = new Mywallet_Pojo(sonuc[i].getTur(), sonuc[i].getTarih(), sonuc[i].getTutar());
@@ -207,10 +223,91 @@ public class MyWallet extends android.support.v4.app.Fragment {
 
     }
 
-    public void onDestroyView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_mywallet, container, false);
-        super.onDestroyView();
+
+    @Override
+    public void onInflate(Context context, AttributeSet attrs, Bundle savedInstanceState) {
+        System.out.println("onInflate");
+        super.onInflate(context, attrs, savedInstanceState);
+    }
+
+    @Override
+    public void onAttachFragment(Fragment childFragment) {
+        System.out.println("onAttachFragment");
+        super.onAttachFragment(childFragment);
     }
 
 
+    @Override
+    public void onAttach(Context context) {
+        System.out.println("onAttach");
+        super.onAttach(context);
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        System.out.println("onCreate");
+        super.onCreate(savedInstanceState);
+    }
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        System.out.println("onViewCreated");
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+
+    @Override
+    public void onStart() {
+        System.out.println("onStart");
+        super.onStart();
+    }
+
+
+    @Override
+    public void onResume() {
+        System.out.println("onResume");
+        super.onResume();
+    }
+
+
+    @Override
+    public void onDetach() {
+        System.out.println("onDetach");
+        super.onDetach();
+    }
+
+
+    @Override
+    public void onDestroy() {
+        System.out.println("onDestroy");
+        super.onDestroy();
+    }
+
+
+    @Override
+    public void onPause() {
+        System.out.println("onPause");
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroyView() {
+        System.out.println("onDestroyView");
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onStop() {
+        System.out.println("Stopda");
+        super.onStop();
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        System.out.println("onSaveInstanceState");
+        super.onSaveInstanceState(outState);
+    }
 }

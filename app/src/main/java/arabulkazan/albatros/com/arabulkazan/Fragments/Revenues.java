@@ -86,9 +86,9 @@ public class Revenues extends android.support.v4.app.Fragment {
             @Override
             public void onAdOpened() {
                 Toast.makeText(getContext(), "Tebrikler kazancınız hesabınıza eklendi.", Toast.LENGTH_SHORT).show();
+              videoit=videoft=String.valueOf(Constants.dateFormat.format(new Date()));
 
-
-                Data.kazancim(Revenues.this.getActivity(), "36233263110", "43270ea45b9c4800f084badd5c610f19c81cb865", new Date().toString(), new Date().toString(), new Data.OnPostExecuteListener() {
+                Data.kazancim(Revenues.this.getActivity(), "36233263110", "43270ea45b9c4800f084badd5c610f19c81cb865",videoit,videoft, new Data.OnPostExecuteListener() {
                     @Override
                     public void onPostExecute(String result) {
                         final Result sonuc = new Gson().fromJson(result, Result.class);
@@ -131,7 +131,32 @@ public class Revenues extends android.support.v4.app.Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(Integer.valueOf(Constants.dateFormat.format(new Date()))-Integer.valueOf(videoit)>5){
+
+                    Data.reklamgecenzaman(Revenues.this.getActivity(), "36233263110", "5fca1c413e0ecc5c7f6a27330394c913f3595bc8", new Data.OnPostExecuteListener() {
+                        @Override
+                        public void onPostExecute(String result) {
+                            final Result sonuc = new Gson().fromJson(result, Result.class);
+                            if (sonuc.getError().equals("1")) {
+                                UI.showErrorDialog(Revenues.this.getActivity(), "Hata", sonuc.getMesssage(), null);
+                            } else {
+
+
+                            }
+
+
+                        }
+                    });
+
+
+
+                }
+
+
                 btn.setEnabled(false);
+
+
 
               /*  if(gecis.isLoaded()){
                     gecis.show();
@@ -152,8 +177,7 @@ public class Revenues extends android.support.v4.app.Fragment {
 
                             @Override
                             public void onRewardedVideoStarted() {
-                                Date date = new Date();
-                                videoit=String.valueOf(Constants.dateFormat.format(date));
+                                videoit=String.valueOf(Constants.dateFormat.format(new Date()));
                             }
 
                             @Override
@@ -163,13 +187,12 @@ public class Revenues extends android.support.v4.app.Fragment {
 
                             @Override
                             public void onRewarded(RewardItem rewardItem) {
-                                Date date = new Date();
-                               videoft=String.valueOf(Constants.dateFormat.format(date));
+                               videoft=String.valueOf(Constants.dateFormat.format(new Date()));
 
                                 Toast.makeText(getContext(), "Tebrikler kazancınız hesabınıza eklendi.", Toast.LENGTH_SHORT).show();
 
 
-                                Data.kazancim(Revenues.this.getActivity(), "36233263110", "43270ea45b9c4800f084badd5c610f19c81cb865",videoit,videoft, new Data.OnPostExecuteListener() {
+                                Data.kazancim(Revenues.this.getActivity(), "36233263110", "5fca1c413e0ecc5c7f6a27330394c913f3595bc8",videoit,videoft, new Data.OnPostExecuteListener() {
                                     @Override
                                     public void onPostExecute(String result) {
                                         final Result sonuc = new Gson().fromJson(result, Result.class);
@@ -188,12 +211,12 @@ public class Revenues extends android.support.v4.app.Fragment {
 
                             @Override
                             public void onRewardedVideoAdLeftApplication() {
-
+                                UI.showErrorDialog(Revenues.this.getActivity(), "Hata","Kazanç sağlayabilmeniz için videoyu sonuna kadar izlemeniz gerekiyor!", null);
                             }
 
                             @Override
                             public void onRewardedVideoAdFailedToLoad(int i) {
-                                Toast.makeText(getContext(), String.valueOf(i), Toast.LENGTH_SHORT).show();
+                                UI.showErrorDialog(Revenues.this.getActivity(), "Hata","Reklam Yüklenirken Bir hata oluştu!", null);
                             }
                         });
                 gecis.loadAd("ca-app-pub-3940256099942544/5224354917",
