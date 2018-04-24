@@ -40,7 +40,7 @@ public class Revenues extends android.support.v4.app.Fragment {
     public RewardedVideoAd gecis;
     Button btn;
     static String videoit = "", videoft = "";
-    private TextView tur, tutar, tarih, tarih1, tarih2;
+    private TextView tur, tutar, tarih, tarih1, tarih2,zenmiktar;
 
 
     @Nullable
@@ -49,6 +49,10 @@ public class Revenues extends android.support.v4.app.Fragment {
 
         View root = inflater.inflate(R.layout.fragment_revenues, container, false);
         TextView izleKazanButton = (TextView) root.findViewById(R.id.btn_izle_kazan);
+
+        zenmiktar=root.findViewById(R.id.zencounttxt);
+
+
         izleKazanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +100,7 @@ public class Revenues extends android.support.v4.app.Fragment {
                         if (sonuc.getError().equals("1")) {
                             UI.showErrorDialog(Revenues.this.getActivity(), "Hata", sonuc.getMesssage(), null);
                         } else {
+                            zenmiktar.setText(   String.valueOf(   Double.valueOf(zenmiktar.getText().toString().split(" Zen")[0] )+0.01    )+" Zen" );
                             UI.showSuccesDialog(Revenues.this.getActivity(), "Başarılı", "Kazancınız Bakiyenize Eklendi", null);
                         }
 
@@ -203,6 +208,7 @@ public class Revenues extends android.support.v4.app.Fragment {
                                         if (sonuc.getError().equals("1")) {
                                             UI.showErrorDialog(Revenues.this.getActivity(), "Hata", sonuc.getMesssage(), null);
                                         } else {
+                                            zenmiktar.setText(   String.valueOf(   Double.valueOf(zenmiktar.getText().toString().split(" Zen")[0] )+0.01    )+" Zen" );
                                             UI.showSuccesDialog(Revenues.this.getActivity(), "Başarılı", "Kazancınız Bakiyenize Eklendi", null);
                                         }
 

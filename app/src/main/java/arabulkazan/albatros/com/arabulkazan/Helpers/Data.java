@@ -115,4 +115,28 @@ public class Data {
     }
 
 
+    public static void resetpw(Activity act, String tc, String telno, final OnPostExecuteListener postExecuteListener) {
+
+
+        ArrayList<NameValuePair> pt = new ArrayList<>();
+        pt.add(new BasicNameValuePair("act", "sendMessage"));
+        pt.add(new BasicNameValuePair("tc",tc));
+        pt.add(new BasicNameValuePair("telno",telno));
+
+        new HttpGonderim(act, Constants.REST_URL, pt, false, new HttpGonderim.OnPostExecuteListener() {
+            @Override
+            public void onPostExecute(String result) {
+
+                if (postExecuteListener != null) {
+                    postExecuteListener.onPostExecute(result);
+
+                }
+            }
+        }).execute();
+
+    }
+
+
+
+
 }

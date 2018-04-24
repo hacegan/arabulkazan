@@ -50,7 +50,7 @@
                     app:srcCompat="@drawable/coins" />
 
                 <arabulkazan.albatros.com.arabulkazan.CustomUI.MyTextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/zencounttxt"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
