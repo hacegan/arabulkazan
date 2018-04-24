@@ -1,6 +1,7 @@
 package arabulkazan.albatros.com.arabulkazan;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.widget.Button;
 
 import arabulkazan.albatros.com.arabulkazan.Fragments.Main;
 import arabulkazan.albatros.com.arabulkazan.Fragments.Register;
+import arabulkazan.albatros.com.arabulkazan.Helpers.UI;
 import arabulkazan.albatros.com.arabulkazan.R;
 
 public class Anasayfa_Giris_Kaydol  extends android.support.v4.app.Fragment{
@@ -35,6 +37,14 @@ Button loginbtn,registerbtn;
                         .replace(R.id.frameLayout, nextFrag,"findThisFragment")
                         .addToBackStack(null)
                         .commit();
+
+                UI.setString(getActivity(),"pass","012345");
+
+                Intent i = Anasayfa_Giris_Kaydol.this.getActivity().getPackageManager()
+                        .getLaunchIntentForPackage(Anasayfa_Giris_Kaydol.this.getActivity().getPackageName() );
+             //   i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+
 
 
 

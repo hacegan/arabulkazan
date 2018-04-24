@@ -2,9 +2,12 @@ package arabulkazan.albatros.com.arabulkazan.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -19,6 +22,7 @@ import arabulkazan.albatros.com.arabulkazan.Anasayfa_Giris_Kaydol;
 import arabulkazan.albatros.com.arabulkazan.Helpers.UI;
 import arabulkazan.albatros.com.arabulkazan.R;
 
+
 /**
  * Created by PC on 29.03.2018.
  */
@@ -27,14 +31,18 @@ public class Main extends android.support.v4.app.Fragment {
   private  static SliderLayout sliderShow;
   private Button logoutbtn;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root=inflater.inflate(R.layout.fragment_main_page, container, false);
 
-     /*   final BottomNavigationView navigation = (BottomNavigationView) root.findViewById(R.id.navigation);
+
+
+       /*final BottomNavigationView navigation = (BottomNavigationView) root.findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navigation.setVisibility(View.GONE);*/
+        navigation.setVisibility(View.VISIBLE);*/
+
 
      //   TextView txtMyReferans=(TextView)root.findViewById(R.id.main_txtReferansNum);
       //  TextView txtWellcomeMessage=(TextView)root.findViewById(R.id.main_text_header);
@@ -80,6 +88,12 @@ public class Main extends android.support.v4.app.Fragment {
                                         .addToBackStack(null)
                                         .commit();
 
+                                Intent i = Main.this.getActivity().getPackageManager()
+                                        .getLaunchIntentForPackage(Main.this.getActivity().getPackageName() );
+                                //   i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(i);
+
+
 
                             }
                         }, new UI.onClick() {
@@ -91,13 +105,7 @@ public class Main extends android.support.v4.app.Fragment {
 
 
 
-
-
                         );
-
-
-
-
 
 
             }
@@ -106,7 +114,6 @@ public class Main extends android.support.v4.app.Fragment {
         return root;
 
     }
-
 
     @Override
     public void onStop() {

@@ -31,7 +31,7 @@ public class UI {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(cn);
         SharedPreferences.Editor edit=preferences.edit();
         edit.clear();
-        edit.commit();
+        edit.apply();
 
     }
 
