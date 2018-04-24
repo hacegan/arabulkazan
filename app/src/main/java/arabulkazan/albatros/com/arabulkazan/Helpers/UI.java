@@ -27,6 +27,13 @@ import arabulkazan.albatros.com.arabulkazan.R;
 
 public class UI {
 
+    public static void logout(Context cn){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(cn);
+        SharedPreferences.Editor edit=preferences.edit();
+        edit.clear();
+        edit.commit();
+
+    }
 
     public static void changeFont(Context cn, TextView tx)
     {

@@ -153,18 +153,37 @@ private static ImageView imageView;
             transaction.commit();*/
 
 
-
-            setupViewPager(viewPager);
+           /* setupViewPager(viewPager);
             frameAnaSayfa.setVisibility(View.GONE);
-            navigation.setVisibility(View.VISIBLE);
+            navigation.setVisibility(View.VISIBLE);*/
+
+
+           Anasayfa_Giris_Kaydol fragmentAnaSayfa=new Anasayfa_Giris_Kaydol();
+
+            frameAnaSayfa.setVisibility(View.VISIBLE);
+            navigation.setVisibility(View.GONE);
+
+            android.support.v4.app.FragmentTransaction  transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frameLayout,fragmentAnaSayfa);
+            transaction.commit();
+
+
+         /*   Revenues fragmentAnaSayfa=new Revenues();
+
+            frameAnaSayfa.setVisibility(View.VISIBLE);
+            navigation.setVisibility(View.GONE);
+
+            android.support.v4.app.FragmentTransaction  transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frameLayout,fragmentAnaSayfa);
+            transaction.commit();*/
+
+
+            //setupActionBar();
+            //zen koin area visible false
 
 
 
-            setupActionBar();
-
-
-
-        mDrawerLayout= (DrawerLayout) findViewById(R.id.container);
+    /*    mDrawerLayout= (DrawerLayout) findViewById(R.id.container);
 
 
 
@@ -172,7 +191,7 @@ private static ImageView imageView;
 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             imageView= (ImageView) findViewById(R.id.imageView);
 
-            imageView.setOnClickListener(this);
+            imageView.setOnClickListener(this);*/
 
 
 

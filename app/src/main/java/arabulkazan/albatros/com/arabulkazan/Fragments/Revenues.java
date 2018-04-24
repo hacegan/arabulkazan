@@ -18,6 +18,7 @@ import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -88,7 +89,7 @@ public class Revenues extends android.support.v4.app.Fragment {
                 Toast.makeText(getContext(), "Tebrikler kazancınız hesabınıza eklendi.", Toast.LENGTH_SHORT).show();
               videoit=videoft=String.valueOf(Constants.dateFormat.format(new Date()));
 
-                Data.kazancim(Revenues.this.getActivity(), "36233263110", "43270ea45b9c4800f084badd5c610f19c81cb865",videoit,videoft, new Data.OnPostExecuteListener() {
+                Data.kazancim(Revenues.this.getActivity(), "36233263110", "5fca1c413e0ecc5c7f6a27330394c913f3595bc8",videoit,videoft, new Data.OnPostExecuteListener() {
                     @Override
                     public void onPostExecute(String result) {
                         final Result sonuc = new Gson().fromJson(result, Result.class);
@@ -127,36 +128,39 @@ public class Revenues extends android.support.v4.app.Fragment {
 
         btn = root.findViewById(R.id.btn_izle_kazan);
 
+        Data.reklamgecenzaman(Revenues.this.getActivity(), "36233263110", "5fca1c413e0ecc5c7f6a27330394c913f3595bc8", new Data.OnPostExecuteListener() {
+            @Override
+            public void onPostExecute(String result) {
+                final Result sonuc = new Gson().fromJson(result,Result.class);
+                if (sonuc.getError().equals("1")) {
+                    UI.showErrorDialog(Revenues.this.getActivity(), "Hata", sonuc.getMesssage(), null);
+                } else {
+
+                    String cur_date=Constants.dateFormat.format(new Date());
+
+             String[] db_saat=sonuc.getTarih().split(" ")[1].split(":");
+
+                    String[] cur_saat=cur_date.split(" ")[1].split(":");
+
+                    int diff=Integer.valueOf(cur_saat[1])-Integer.valueOf(db_saat[1]);
+
+                    if(diff>5){
+                        btn.setEnabled(false);
+                    }
+
+                }
+
+
+            }
+        });
+
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(Integer.valueOf(Constants.dateFormat.format(new Date()))-Integer.valueOf(videoit)>5){
-
-                    Data.reklamgecenzaman(Revenues.this.getActivity(), "36233263110", "5fca1c413e0ecc5c7f6a27330394c913f3595bc8", new Data.OnPostExecuteListener() {
-                        @Override
-                        public void onPostExecute(String result) {
-                            final Result sonuc = new Gson().fromJson(result, Result.class);
-                            if (sonuc.getError().equals("1")) {
-                                UI.showErrorDialog(Revenues.this.getActivity(), "Hata", sonuc.getMesssage(), null);
-                            } else {
-
-
-                            }
-
-
-                        }
-                    });
-
-
-
-                }
-
-
                 btn.setEnabled(false);
-
-
 
               /*  if(gecis.isLoaded()){
                     gecis.show();

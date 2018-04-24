@@ -4,6 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/ana"
+android:theme="@style/NoActionBar"
 
     >
 
@@ -24,7 +25,7 @@
         android:background="@mipmap/giris_kaydol_btnlar"
        android:hint="GİRİŞ YAP"
         android:textAlignment="center"
-
+android:id="@+id/loginbtn"
         android:textColor="#FFFFFF"
 
         />
@@ -37,5 +38,6 @@
         android:hint="KAYIT OL"
         android:layout_marginLeft="50dp"
         android:textColor="#FF3333"
+        android:id="@+id/registerbtn"
         />
 </LinearLayout>

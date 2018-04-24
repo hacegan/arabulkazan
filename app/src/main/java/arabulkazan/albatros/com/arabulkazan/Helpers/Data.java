@@ -95,12 +95,12 @@ public class Data {
 
     public static void reklamgecenzaman(Activity act, String tc, String pass, final OnPostExecuteListener postExecuteListener) {
 
-        ArrayList<NameValuePair> mr = new ArrayList<>();
-        mr.add(new BasicNameValuePair("act", "reklamgecenzaman"));
-        mr.add(new BasicNameValuePair("tc", tc));
-        mr.add(new BasicNameValuePair("pass", pass));
+        ArrayList<NameValuePair> pt = new ArrayList<>();
+        pt.add(new BasicNameValuePair("act", "reklamgecenzaman"));
+        pt.add(new BasicNameValuePair("tc",tc));
+        pt.add(new BasicNameValuePair("pass",pass));
 
-        new HttpGonderim(act, Constants.REST_URL, mr, false, new HttpGonderim.OnPostExecuteListener() {
+        new HttpGonderim(act, Constants.REST_URL, pt, false, new HttpGonderim.OnPostExecuteListener() {
             @Override
             public void onPostExecute(String result) {
 
