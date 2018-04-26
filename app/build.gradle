@@ -7,7 +7,7 @@ android {
     buildToolsVersion '26.0.1'
     defaultConfig {
         applicationId "arabulkazan.albatros.com.arabulkazan"
-        minSdkVersion 15
+        minSdkVersion 15//min 15ti
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -47,9 +47,15 @@ dependencies {
    // compile 'com.google.firebase:firebase-ads:15.0.0'
    // compile 'com.google.android.gms:play-services-ads:15.0.0'
 
-    implementation 'com.github.Yalantis:Context-Menu.Android:1.0.5'
+   // implementation 'com.github.Yalantis:Context-Menu.Android:1.0.5'
 
     compile 'com.github.lightfire:Android-Gradient-Text-Color:b0047755f7'
+
+   // implementation 'de.ehsun.coloredtimebar:coloredtimebar:1.0' // API 19
+
+    compile 'com.github.DavidProdinger:weekdays-selector:1.0.4'
+
+
 
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:design:26.+'

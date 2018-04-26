@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
@@ -11,8 +13,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Kaç dkda bir hatırlatılsın" />
+        android:layout_marginTop="20dp"
+        android:text="Reklam hazır olduğunda size haber vermemiz için kaç dakikada bir haber almak istersiniz?" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -20,16 +22,110 @@
 android:id="@+id/kacdkhatirlatspinner"
         />
 
-    <TextView
+
+    <com.dpro.widgets.WeekdaysPicker
+        android:id="@+id/weekdays"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hangi saatlerde hatırlatılmasını istersiniz"
-        android:layout_marginTop="100dp"
+        app:sunday_first_day="false"
+
+
         />
 
-    <Spinner
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/hangisaathatirlatspinner"
-        />
+        android:layout_height="76dp"
+        android:weightSum="7">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuvarlak_buton"
+            android:text="PAZARTESİ"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/pztesibtn"
+
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuvarlak_buton"
+            android:text="Salı"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/salibtn"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuvarlak_buton"
+            android:text="ÇARŞAMBA"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/carsbtn"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuvarlak_buton"
+            android:text="PERŞEMBE"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/persbtn"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuvarlak_buton"
+            android:text="Cuma"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/cumabtn"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuvarlak_buton"
+            android:text="Cumartesi"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/ctesibtn"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuvarlak_buton"
+            android:text="Pazar"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/pzrbtn"
+            />
+
+
+    </LinearLayout>
+
+
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/recurchooserbtn"
+
+    />
+
+
+
 </LinearLayout>

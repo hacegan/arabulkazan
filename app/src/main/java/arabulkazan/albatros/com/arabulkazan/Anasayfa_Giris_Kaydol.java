@@ -12,6 +12,7 @@ import android.view.Window;
 import android.widget.Button;
 
 import arabulkazan.albatros.com.arabulkazan.Fragments.Main;
+import arabulkazan.albatros.com.arabulkazan.Fragments.NotificationRemember;
 import arabulkazan.albatros.com.arabulkazan.Fragments.Register;
 import arabulkazan.albatros.com.arabulkazan.Helpers.UI;
 import arabulkazan.albatros.com.arabulkazan.R;
@@ -55,11 +56,20 @@ Button loginbtn,registerbtn;
             @Override
             public void onClick(View view) {
 
-                Register nextFrag= new Register();
+             /*   Register nextFrag= new Register();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frameLayout, nextFrag,"findThisFragment")
+                        .addToBackStack(null)
+                        .commit();*/
+
+                NotificationRemember nextFrag= new NotificationRemember();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frameLayout, nextFrag,"findThisFragment")
                         .addToBackStack(null)
                         .commit();
+
+
+
 
 
             }

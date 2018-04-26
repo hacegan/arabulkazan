@@ -15,7 +15,9 @@ android:theme="@style/NoActionBar"
         android:layout_height="72dp"
         android:layout_marginTop="100dp"
         android:fitsSystemWindows="true"
-        app:srcCompat="@mipmap/logo_calismayuzeyi1" />
+         />
+
+    //logo_calismayuzeyi1di
 
     <Button
         android:layout_width="300dp"
