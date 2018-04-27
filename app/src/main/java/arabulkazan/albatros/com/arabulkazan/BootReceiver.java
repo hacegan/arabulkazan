@@ -50,7 +50,7 @@ return;
 
 
 //alarmMgr.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pendingIntent);
-                alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime(),5*1000,pendingIntent);
+                alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime()+1000,5*1000,pendingIntent);
 
             }
             catch (Exception e){

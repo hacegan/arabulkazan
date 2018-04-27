@@ -1,36 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hangi sıklıkla reklam izlemek istersiniz? Gösterilmesini istemediğiniz bölümleri belirtiniz" />
+        android:layout_marginTop="10dp"
+        android:text="Hangi günler reklam izlemek istersiniz?" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Reklam hazır olduğunda size haber vermemiz için kaç dakikada bir haber almak istersiniz?" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-android:id="@+id/kacdkhatirlatspinner"
-        />
-
-
-    <com.dpro.widgets.WeekdaysPicker
-        android:id="@+id/weekdays"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:sunday_first_day="false"
-
-
-        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,94 +18,161 @@ android:id="@+id/kacdkhatirlatspinner"
         android:weightSum="7">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/yuvarlak_buton"
-            android:text="PAZARTESİ"
-            android:textSize="12sp"
-            android:textColor="#FFFFFF"
             android:id="@+id/pztesibtn"
-
-            />
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/yuvarlak_buton"
-            android:text="Salı"
-            android:textSize="12sp"
+            android:background="@drawable/yuvarlak_buton_true"
+            android:tag="kirmizi"
+            android:text="PAZARTESİ"
             android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Button
             android:id="@+id/salibtn"
-            />
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/yuvarlak_buton"
-            android:text="ÇARŞAMBA"
-            android:textSize="12sp"
+            android:background="@drawable/yuvarlak_buton_true"
+            android:tag="kirmizi"
+            android:text="Salı"
             android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Button
             android:id="@+id/carsbtn"
-            />
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/yuvarlak_buton"
-            android:text="PERŞEMBE"
-            android:textSize="12sp"
+            android:background="@drawable/yuvarlak_buton_true"
+            android:tag="kirmizi"
+            android:text="ÇARŞAMBA"
             android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Button
             android:id="@+id/persbtn"
-            />
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/yuvarlak_buton"
-            android:text="Cuma"
-            android:textSize="12sp"
+            android:background="@drawable/yuvarlak_buton_true"
+            android:tag="kirmizi"
+            android:text="PERŞEMBE"
             android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Button
             android:id="@+id/cumabtn"
-            />
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/yuvarlak_buton"
-            android:text="Cumartesi"
-            android:textSize="12sp"
+            android:background="@drawable/yuvarlak_buton_true"
+            android:tag="kirmizi"
+            android:text="Cuma"
             android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Button
             android:id="@+id/ctesibtn"
-            />
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/yuvarlak_buton"
-            android:text="Pazar"
-            android:textSize="12sp"
-            android:textColor="#FFFFFF"
+            android:background="@drawable/yuvarlak_buton_false"
+            android:tag="beyaz"
+            android:text="Cumartesi"
+            android:textColor="#FF0000"
+            android:textSize="12sp" />
+
+        <Button
             android:id="@+id/pzrbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuvarlak_buton_false"
+            android:tag="beyaz"
+            android:text="Pazar"
+            android:textColor="#FF0000"
+            android:textSize="12sp"
+
             />
 
 
     </LinearLayout>
 
 
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/recurchooserbtn"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Hangi saat aralığında reklam izlemek istersiniz?" />
 
-    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
+        <TimePicker
+            android:id="@+id/baszaman"
+            android:layout_width="217dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:timePickerMode="spinner"></TimePicker>
+
+        <TimePicker
+            android:id="@+id/bitiszaman"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:timePickerMode="spinner"></TimePicker>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/baszamantv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="01:58"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/bitiszamantv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="01:58"
+            android:textAlignment="center" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Reklam hazır olduğunda size haber vermemiz için ne kadar sıklıkla haber almak istersiniz?" />
+
+    <Spinner
+        android:id="@+id/kacdkhatirlatspinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/recurchooserbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="KAYIT İŞLEMİNİ TAMAMLA" />
 
 
 </LinearLayout>

@@ -1,16 +1,17 @@
 package arabulkazan.albatros.com.arabulkazan.Fragments;
 
 import android.app.AlarmManager;
-import android.app.Dialog;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +19,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
-
-import com.dpro.widgets.WeekdaysPicker;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,12 +31,11 @@ import java.util.List;
 import arabulkazan.albatros.com.arabulkazan.AlarmNotificationService;
 import arabulkazan.albatros.com.arabulkazan.AlarmReceiver;
 import arabulkazan.albatros.com.arabulkazan.AlarmSoundService;
-import arabulkazan.albatros.com.arabulkazan.MainActivity;
 import arabulkazan.albatros.com.arabulkazan.R;
 
 public class NotificationRemember extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     Spinner kacdk, hangisaat;
-    Button btn;
+    Button btn,kayitbitir_btn;
     static CheckBox hergun, herhafta, heray, heryil;
     //Pending intent instance
     private PendingIntent pendingIntent;
@@ -44,6 +43,8 @@ public class NotificationRemember extends Fragment implements AdapterView.OnItem
    private static ArrayAdapter<String> dataAdapter;
    private Button pztesi,sali,cars,pers,cuma,ctesi,pzr;
 
+   private TimePicker baszaman,bitzaman;
+public static TextView bastv,bittv;
 
     public static final int REQUEST_CODE = 0;
 
@@ -69,18 +70,96 @@ public class NotificationRemember extends Fragment implements AdapterView.OnItem
      ctesi=root.findViewById(R.id.ctesibtn);
      pzr=root.findViewById(R.id.pzrbtn);
 
+
+     baszaman=root.findViewById(R.id.baszaman);
+bitzaman=root.findViewById(R.id.bitiszaman);
+
+bastv=root.findViewById(R.id.baszamantv);
+bittv=root.findViewById(R.id.bitiszamantv);
+
+baszaman.setIs24HourView(true);
+bitzaman.setIs24HourView(true);
+
+baszaman.setCurrentHour(0);
+baszaman.setCurrentMinute(0);
+bastv.setText("00:00");
+
+bitzaman.setCurrentHour(24);
+bitzaman.setCurrentMinute(59);
+bittv.setText("00:00");
+
+
+kayitbitir_btn=root.findViewById(R.id.recurchooserbtn);
+
+kayitbitir_btn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+
+
+
+    }
+});
+
+baszaman.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+    @Override
+    public void onTimeChanged(TimePicker timePicker, int i, int i1) {
+bastv.setText(String.format("%02d:%02d",timePicker.getCurrentHour(), timePicker.getCurrentMinute()));
+    }
+});
+
+bitzaman.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+    @Override
+    public void onTimeChanged(TimePicker timePicker, int i, int i1) {
+        bittv.setText(String.format("%02d:%02d",timePicker.getCurrentHour(), timePicker.getCurrentMinute()));
+    }
+});
+
+
      pztesi.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
 
-             if(pztesi.getcolor)
-             
+             if(pztesi.getTag().equals("kirmizi")){
+                 pztesi.setTag("beyaz");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_false);
+               //  dw.setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_ATOP);
+                // pztesi.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 pztesi.setTextColor(Color.RED);
+                 pztesi.setBackgroundDrawable(dw);
+             }
+             else{
+                 pztesi.setTag("kirmizi");
+                // pztesi.setBackgroundResource(R.drawable.yuvarlak_buton_true);
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_true);
+              //   dw.setColorFilter(Color.parseColor("#FF0000"), PorterDuff.Mode.SRC_ATOP);
+               //  pztesi.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 pztesi.setTextColor(Color.WHITE);
+                 pztesi.setBackgroundDrawable(dw);
+             }
+
          }
      });
 
      sali.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
+
+             if(sali.getTag().equals("kirmizi")){
+                 sali.setTag("beyaz");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_false);
+               //  sali.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 sali.setTextColor(Color.RED);
+                 sali.setBackgroundDrawable(dw);
+             }
+             else{
+                 sali.setTag("kirmizi");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_true);
+               //  sali.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 sali.setTextColor(Color.WHITE);
+                 sali.setBackgroundDrawable(dw);
+             }
+
+
 
          }
      });
@@ -89,6 +168,22 @@ public class NotificationRemember extends Fragment implements AdapterView.OnItem
          @Override
          public void onClick(View view) {
 
+             if(cars.getTag().equals("kirmizi")){
+                 cars.setTag("beyaz");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_false);
+               //  cars.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 cars.setTextColor(Color.RED);
+                 cars.setBackgroundDrawable(dw);
+             }
+             else{
+                 cars.setTag("kirmizi");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_true);
+               //  cars.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 cars.setTextColor(Color.WHITE);
+                 cars.setBackgroundDrawable(dw);
+             }
+
+
          }
      });
 
@@ -96,12 +191,42 @@ public class NotificationRemember extends Fragment implements AdapterView.OnItem
          @Override
          public void onClick(View view) {
 
+             if(pers.getTag().equals("kirmizi")){
+                 pers.setTag("beyaz");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_false);
+                // pers.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 pers.setTextColor(Color.RED);
+                 pers.setBackgroundDrawable(dw);
+             }
+             else{
+                 pers.setTag("kirmizi");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_true);
+               //  pers.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 pers.setTextColor(Color.WHITE);
+                 pers.setBackgroundDrawable(dw);
+             }
+
          }
      });
 
      cuma.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
+
+             if(cuma.getTag().equals("kirmizi")){
+                 cuma.setTag("beyaz");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_false);
+               //  cuma.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 cuma.setTextColor(Color.RED);
+                 cuma.setBackgroundDrawable(dw);
+             }
+             else{
+                 cuma.setTag("kirmizi");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_true);
+               //  cuma.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 cuma.setTextColor(Color.WHITE);
+                 cuma.setBackgroundDrawable(dw);
+             }
 
          }
      });
@@ -111,6 +236,21 @@ public class NotificationRemember extends Fragment implements AdapterView.OnItem
          @Override
          public void onClick(View view) {
 
+             if(ctesi.getTag().equals("kirmizi")){
+                 ctesi.setTag("beyaz");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_false);
+                // ctesi.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 ctesi.setTextColor(Color.RED);
+                 ctesi.setBackgroundDrawable(dw);
+             }
+             else{
+                 ctesi.setTag("kirmizi");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_true);
+                // ctesi.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 ctesi.setTextColor(Color.WHITE);
+                 ctesi.setBackgroundDrawable(dw);
+             }
+
 
          }
      });
@@ -119,6 +259,21 @@ public class NotificationRemember extends Fragment implements AdapterView.OnItem
      pzr.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
+
+             if(pzr.getTag().equals("kirmizi")){
+                 pzr.setTag("beyaz");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_false);
+                // pzr.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 pzr.setTextColor(Color.RED);
+                 pzr.setBackgroundDrawable(dw);
+             }
+             else{
+                 pzr.setTag("kirmizi");
+                 Drawable dw = NotificationRemember.this.getContext().getResources().getDrawable(R.drawable.yuvarlak_buton_true);
+                // pzr.setCompoundDrawablesWithIntrinsicBounds(dw, null, null, null);
+                 pzr.setTextColor(Color.WHITE);
+                 pzr.setBackgroundDrawable(dw);
+             }
 
          }
      });
@@ -159,7 +314,7 @@ public class NotificationRemember extends Fragment implements AdapterView.OnItem
         // attaching data adapter to spinner
         kacdk.setAdapter(dataAdapter);
 
-        WeekdaysPicker widget = root.findViewById(R.id.weekdays);
+
 
 
 
@@ -213,50 +368,6 @@ btn.setOnClickListener(new View.OnClickListener() {
 });
 
 
-
-/*
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Dialog dialog=new Dialog(NotificationRemember.this.getContext());
-                dialog.show();
-
-
-                hergun.setOnClickListener(this);
-                herhafta.setOnClickListener(this);
-                heray.setOnClickListener(this);
-                heryil.setOnClickListener(this);
-
-
-
-                dialog.addContentView(hergun,new RelativeLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT));
-
-                dialog.addContentView(herhafta,new RelativeLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT));
-
-                dialog.addContentView(hergun,new RelativeLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT));
-
-                dialog.addContentView(heray,new RelativeLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT));
-
-                dialog.addContentView(heryil,new RelativeLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT));
-
-                dialog.show();
-
-
-            }
-        });*/
-
-
         return root;
     }
 
@@ -307,22 +418,22 @@ btn.setOnClickListener(new View.OnClickListener() {
 
         if(recurence.equals("dk")){
             System.out.println(süre+"Dakika sonra yeni reklamı izleyebileceksiniz.");
-            Toast.makeText(NotificationRemember.this.getContext(),süre+"Dakika sonra yeni reklamı izleyebileceksiniz.",Toast.LENGTH_SHORT).show();
-            alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime(),süre*60*1000,pendingIntent);
-
+            Toast.makeText(NotificationRemember.this.getContext(),süre+" Dakika sonra yeni reklamı izleyebileceksiniz.",Toast.LENGTH_SHORT).show();
+            alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime()+1000,süre*60*1000,pendingIntent);
+//süre*60*1000 internalMillis default
         }
         else if(recurence.equals("saat")){
-            alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime(),süre*60*60*1000,pendingIntent);
+            alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime()+1000,süre*60*60*1000,pendingIntent);
 
 
         }
 
         else if(recurence.equals("gün")){
-            alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime(),süre*24*60*60*1000,pendingIntent);
+            alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime()+1000,süre*24*60*60*1000,pendingIntent);
         }
 
         else if(recurence.equals("hafta")){
-            alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime(),süre*7*24*60*60*1000,pendingIntent);
+            alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime()+1000,süre*7*24*60*60*1000,pendingIntent);
         }
 
 

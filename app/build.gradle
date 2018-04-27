@@ -53,7 +53,7 @@ dependencies {
 
    // implementation 'de.ehsun.coloredtimebar:coloredtimebar:1.0' // API 19
 
-    compile 'com.github.DavidProdinger:weekdays-selector:1.0.4'
+
 
 
 
