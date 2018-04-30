@@ -55,7 +55,7 @@ android:fitsSystemWindows="true"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/drawer_view"
-
+android:id="@+id/nav_drawer"
         >
 
 

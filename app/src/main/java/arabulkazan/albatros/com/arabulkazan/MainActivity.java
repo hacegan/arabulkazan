@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 private static DrawerLayout mDrawerLayout;
 private static  ActionBarDrawerToggle mToggle;
 private static ImageView imageView;
+private NavigationView nav_drawer;
 
     @Override
     protected void onStop() {
@@ -110,6 +111,68 @@ private static ImageView imageView;
         actionBar.setCustomView(actionBarLayout);
 
 
+        mDrawerLayout= (DrawerLayout) findViewById(R.id.container);
+
+
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        imageView= (ImageView) findViewById(R.id.imageView);
+
+        imageView.setOnClickListener(this);
+
+        nav_drawer= (NavigationView) findViewById(R.id.nav_drawer);
+        nav_drawer.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+
+                    case R.id.logoutbtn:
+                        UI.showConfirmation(MainActivity.this,"Çıkış","Çıkış Yapmak İstediğinize emin misiniz?",
+                                new UI.onClick() {
+                                    @Override
+                                    public void onFinishedDialog() {
+                                        UI.logout(MainActivity.this);
+
+
+                                        Anasayfa_Giris_Kaydol nextFrag= new Anasayfa_Giris_Kaydol();
+                                        MainActivity.this.getSupportFragmentManager().beginTransaction()
+                                                .replace(R.id.frameLayout, nextFrag,"findThisFragment")
+                                                .addToBackStack(null)
+                                                .commit();
+
+                                        Intent i = MainActivity.this.getPackageManager()
+                                                .getLaunchIntentForPackage(MainActivity.this.getPackageName() );
+
+                                        startActivity(i);
+
+
+
+                                    }
+                                }, new UI.onClick() {
+                                    @Override
+                                    public void onFinishedDialog() {
+
+                                    }
+                                }
+
+
+
+                        );
+
+                        break;
+
+
+
+                }
+
+
+
+                return false;
+            }
+        });
+
 
         // You customization
 
@@ -156,6 +219,9 @@ private static ImageView imageView;
            /* setupViewPager(viewPager);
             frameAnaSayfa.setVisibility(View.GONE);
             navigation.setVisibility(View.VISIBLE);*/
+
+
+
 
 
            Anasayfa_Giris_Kaydol fragmentAnaSayfa=new Anasayfa_Giris_Kaydol();
@@ -227,10 +293,17 @@ getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             }
         });
 
+
+
+
+
+
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        System.out.println("Girdi "+item+"item id "+item.getItemId());
 
         if(mToggle.onOptionsItemSelected(item)){
 return  true;

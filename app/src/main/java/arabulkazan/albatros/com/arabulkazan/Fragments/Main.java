@@ -1,6 +1,7 @@
 package arabulkazan.albatros.com.arabulkazan.Fragments;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,14 +12,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 
+
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import arabulkazan.albatros.com.arabulkazan.Anasayfa_Giris_Kaydol;
+import arabulkazan.albatros.com.arabulkazan.ExpandableListAdapter;
 import arabulkazan.albatros.com.arabulkazan.Helpers.UI;
 import arabulkazan.albatros.com.arabulkazan.R;
 
@@ -32,10 +40,13 @@ public class Main extends android.support.v4.app.Fragment {
   private Button logoutbtn;
 
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root=inflater.inflate(R.layout.fragment_main_page, container, false);
+
+
 
 
 
@@ -58,9 +69,9 @@ public class Main extends android.support.v4.app.Fragment {
 
         sliderShow.addSlider(textSliderView);
 
-        logoutbtn=root.findViewById(R.id.logoutbtn);
+      //  logoutbtn=root.findViewById(R.id.logoutbtn);
 
-        logoutbtn.setOnClickListener(new View.OnClickListener() {
+    /*    logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 UI.showConfirmation(Main.this.getActivity(),"Çıkış","Çıkış Yapmak İstediğinize emin misiniz?",
@@ -69,18 +80,6 @@ public class Main extends android.support.v4.app.Fragment {
                             public void onFinishedDialog() {
                                 UI.logout(Main.this.getActivity());
 
-                            /*    Register register=new Register();
-                                android.support.v4.app.FragmentTransaction  transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                                transaction.replace(R.id.frameLayout,register);
-                              //  transaction.add(R.id.frameLayout,register);
-                                transaction.commit();*/
-
-
-
-                             /*   Intent i = Main.this.getActivity().getPackageManager()
-                                        .getLaunchIntentForPackage(Main.this.getActivity().getPackageName());
-                               i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                               Main.this.startActivity(i);*/
 
                                 Anasayfa_Giris_Kaydol nextFrag= new Anasayfa_Giris_Kaydol();
                                 getActivity().getSupportFragmentManager().beginTransaction()
@@ -90,7 +89,7 @@ public class Main extends android.support.v4.app.Fragment {
 
                                 Intent i = Main.this.getActivity().getPackageManager()
                                         .getLaunchIntentForPackage(Main.this.getActivity().getPackageName() );
-                                //   i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                                 startActivity(i);
 
 
@@ -109,7 +108,10 @@ public class Main extends android.support.v4.app.Fragment {
 
 
             }
-        });
+        });*/
+
+
+
 
         return root;
 
@@ -120,4 +122,9 @@ public class Main extends android.support.v4.app.Fragment {
         sliderShow.stopAutoCycle();
         super.onStop();
     }
+
+
+
+
+
 }

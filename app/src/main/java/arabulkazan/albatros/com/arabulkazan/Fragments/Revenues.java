@@ -133,7 +133,7 @@ public class Revenues extends android.support.v4.app.Fragment {
 
         btn = root.findViewById(R.id.btn_izle_kazan);
 
-        Data.reklamgecenzaman(Revenues.this.getActivity(), "36233263110", "5fca1c413e0ecc5c7f6a27330394c913f3595bc8", new Data.OnPostExecuteListener() {
+        Data.reklamgecenzaman(Revenues.this.getActivity(), "36233263110", "2121ec97b2b46d6a5fb88ddda697bac676aced66", new Data.OnPostExecuteListener() {
             @Override
             public void onPostExecute(String result) {
                 final Result sonuc = new Gson().fromJson(result,Result.class);

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="3dp"
+        app:contentPadding="3dp">
+
+        <!--    <arabulkazan.albatros.com.arabulkazan.CustomUI.MyTextViewBlack
+                android:id="@+id/main_text_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Hoşgeldin Ömer Çakıcı!"
+                android:textAlignment="textEnd"
+                android:gravity="end"
+                android:layout_marginRight="100dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold" />-->
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/hosgeldin"
+            android:layout_marginRight="100dp"
+            android:text="HOŞGEDİN SAMET DAĞ"
+            android:enabled="false"
+            android:textColor="#FFFFFF"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/sizeozel"
+            android:layout_marginLeft="240dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableTop="@drawable/sizeozelicon"
+            android:layout_marginLeft="280dp"
+            android:text="SİZE ÖZEL"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:background="@null"
+            android:layout_marginTop="2dp"
+            />
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        >
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginLeft="5dp"
+            android:hint="Kobi Adı  / Ürün / Kategori / Sektör / Adres   "
+            />
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/arama_icon"
+            />
+
+
+    </LinearLayout>
+
+
+    <com.daimajia.slider.library.SliderLayout
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        />
+
+
+    <!-- <ExpandableListView
+         android:id="@+id/lvExp"
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"/>-->
+
+    <!--
+    <ImageSwitcher
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ok_left"
+        >
+
+    </ImageSwitcher>
+
+    <ImageSwitcher
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ok_right"
+        >
+
+
+    </ImageSwitcher>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:id="@+id/logoutbtn"
+        android:text="ÇIKIŞ YAP"
+        android:layout_marginTop="50dp"
+        />
+-->
+
+    <!--   <android.support.v7.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           app:cardCornerRadius="3dp"
+           app:cardElevation="3dp"
+           app:contentPadding="3dp">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="horizontal">
+
+               <arabulkazan.albatros.com.arabulkazan.CustomUI.MyTextViewBold
+                   android:id="@+id/main_txtReferansNum"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="Referans Numaran:4200025"
+                   android:textAlignment="center"
+                   android:textColor="#000"
+                   android:textSize="18sp"
+                   android:textStyle="bold" />
+
+               <arabulkazan.albatros.com.arabulkazan.CustomUI.MyCustomButton
+                   android:id="@+id/button"
+                   style="@style/button_phenomena_regular"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:drawableLeft="@drawable/share"
+                   android:elevation="4dp"
+                   android:text="Paylaş"
+                   android:textSize="18sp" />
+           </LinearLayout>
+
+       </android.support.v7.widget.CardView>-->
+
+
+</LinearLayout>

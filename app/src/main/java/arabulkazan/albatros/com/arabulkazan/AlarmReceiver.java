@@ -26,6 +26,10 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        if(NotificationRemember.bastv==null){
+            return;
+        }
+
         int bas_zmn = Integer.valueOf(NotificationRemember.bastv.getText().toString());
         int bit_zmn = Integer.valueOf(NotificationRemember.bastv.getText().toString());
 
