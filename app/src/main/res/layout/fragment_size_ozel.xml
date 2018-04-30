@@ -1,172 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/view56"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-
-
     android:layout_height="match_parent"
-    tools:layout_editor_absoluteY="81dp">
+    android:orientation="vertical"
+    >
 
 
     <ImageView
-        android:id="@+id/imageView15"
         android:layout_width="55dp"
-        android:layout_height="0dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/sizeozel_icon"
-        app:layout_constraintBottom_toTopOf="@+id/view47"
-        app:layout_constraintEnd_toEndOf="@+id/textView20"
-        app:layout_constraintStart_toStartOf="@+id/textView20"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="180dp"
+        android:background="@drawable/sizeozel_icon" />
 
     <TextView
-        android:id="@+id/textView20"
         android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginRight="106dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
         android:text="SİZE ÖZEL"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        android:layout_marginTop="55dp"
+        />
 
     <View
-        android:id="@+id/view47"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="406dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:background="@drawable/size_ozel_divider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        android:layout_marginTop="95dp"
+        />
 
     <ExpandableListView
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view47"></ExpandableListView>
+        android:id="@+id/exp_referans_linkim"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="105dp"
+
+        android:layout_weight="1"
+        ></ExpandableListView>
+
 
     <View
-        android:id="@+id/view48"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@drawable/size_ozel_divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
+        android:layout_marginTop="165dp"
+        />
+
+    <ExpandableListView
+        android:id="@+id/exp_satislarim"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="175dp"
+        android:layout_weight="1"
+        ></ExpandableListView>
 
     <View
-        android:id="@+id/view49"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@drawable/size_ozel_divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic2" />
-
+        android:layout_marginTop="235dp"
+        />
 
     <TextView
-        android:id="@+id/textView27"
-        android:layout_width="0dp"
-        android:layout_height="21dp"
-
-        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="245dp"
         android:text="İş Ortaklarım"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view49" />
+        />
 
     <View
-        android:id="@+id/view50"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/size_ozel_divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+        android:layout_marginTop="270dp"
+        />
 
     <TextView
-        android:id="@+id/textView28"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:layout_marginTop="280dp"
         android:text="Sepetim"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view50" />
+        />
+
 
     <View
-        android:id="@+id/view54"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/size_ozel_divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+        android:layout_marginTop="305dp"
+        />
 
     <TextView
-        android:id="@+id/textView29"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Alınan Ürünler"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view54" />
+        android:layout_marginTop="315dp"
+        android:text="Alınan Ürünler"
+        />
+
 
     <View
-        android:id="@+id/view55"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/size_ozel_divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        android:layout_marginTop="340dp"
+        />
 
     <ExpandableListView
-        android:id="@+id/_dynamic3"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view55"></ExpandableListView>
+        android:id="@+id/exp_bilgilerim"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="355dp"
+        android:layout_weight="1"
+        ></ExpandableListView>
+
 
     <View
-        android:id="@+id/view57"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/size_ozel_divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic3" />
-
-    <ExpandableListView
-        android:id="@+id/_dynamic2"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view48"></ExpandableListView>
+        android:layout_marginTop="420dp"
+        />
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

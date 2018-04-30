@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view56"
+    android:layout_width="match_parent"
+
+
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sizeozel_icon" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SİZE ÖZEL"
+        android:textSize="24sp" />
+
+    <View
+        android:id="@+id/view47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/size_ozel_divider" />
+
+    <ExpandableListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ExpandableListView>
+
+    <View
+        android:id="@+id/view48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/size_ozel_divider" />
+
+    <View
+        android:id="@+id/view49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/size_ozel_divider" />
+
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="İş Ortaklarım"
+        android:textAlignment="center" />
+
+    <View
+        android:id="@+id/view50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/size_ozel_divider" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sepetim"
+        android:textAlignment="center" />
+
+    <View
+        android:id="@+id/view54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/size_ozel_divider" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alınan Ürünler"
+        android:textAlignment="center" />
+
+    <View
+        android:id="@+id/view55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/size_ozel_divider" />
+
+    <ExpandableListView
+        android:id="@+id/_dynamic3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ExpandableListView>
+
+    <View
+        android:id="@+id/view57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/size_ozel_divider" />
+
+    <ExpandableListView
+        android:id="@+id/_dynamic2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ExpandableListView>
+
+
+</android.support.constraint.ConstraintLayout>

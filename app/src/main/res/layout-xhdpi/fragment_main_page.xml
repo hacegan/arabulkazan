@@ -44,16 +44,16 @@
             />
 
         <Button
+            android:id="@+id/sizeozelbtn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:drawableTop="@drawable/sizeozelicon"
             android:layout_marginLeft="280dp"
+            android:layout_marginTop="2dp"
+            android:background="@null"
+            android:drawableTop="@drawable/sizeozelicon"
             android:text="SİZE ÖZEL"
             android:textColor="#FFFFFF"
-            android:textSize="10sp"
-            android:background="@null"
-            android:layout_marginTop="2dp"
-            />
+            android:textSize="10sp" />
 
 
 
@@ -92,6 +92,52 @@
         android:layout_height="160dp"
         />
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:id="@+id/exp_gunun_firsatlari"
+        ></ExpandableListView>
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:id="@+id/exp_online_egitim"
+        ></ExpandableListView>
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:id="@+id/exp_online_arac_kiralama"
+        ></ExpandableListView>
+
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:id="@+id/exp_online_sigorta"
+        ></ExpandableListView>
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:id="@+id/exp_online_fatura"
+        ></ExpandableListView>
+
+
+        </LinearLayout>
+    </ScrollView>
 
     <!-- <ExpandableListView
          android:id="@+id/lvExp"
