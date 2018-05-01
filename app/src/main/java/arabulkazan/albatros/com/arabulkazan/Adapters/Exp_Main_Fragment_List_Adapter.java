@@ -99,8 +99,8 @@ public class Exp_Main_Fragment_List_Adapter implements ExpandableListAdapter {
     public View getChildView(int groupIndex, int childIndex, boolean isLastChild, View view, ViewGroup viewGroup) {
         // First get child text/
         Object childObj = this.getChild(groupIndex, childIndex);
-       // String childText = (String)childObj;
-        ImageView childImage= (ImageView) this.getChild(groupIndex,childIndex);
+        String childText = (String)childObj;
+        //ImageView childImage= (ImageView) this.getChild(groupIndex,childIndex);
 
 
         // Create a TextView to display child text.
@@ -109,9 +109,12 @@ public class Exp_Main_Fragment_List_Adapter implements ExpandableListAdapter {
        // childTextView.setTextSize(20);
         // childTextView.setBackgroundColor(Color.GREEN);
 
-        ImageView imageView=new ImageView(context);
+      /*  ImageView imageView=new ImageView(context);
         Drawable drawable=childImage.getDrawable();
-        imageView.setImageDrawable(drawable);
+        imageView.setImageDrawable(drawable);*/
+
+        ImageView imageView=new ImageView(context);
+        imageView.setImageResource(Integer.valueOf(childText));
 
 
         // Set child textview offset left. Then it will align to the right of the group image.

@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,14 +39,14 @@ public class SizeOzel  extends android.support.v4.app.Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root=inflater.inflate(R.layout.fragment_size_ozel, container, false);
+        View root=inflater.inflate(R.layout.fragment_size_ozel_deneme, container, false);
 
 
-this.referans_linkim("Referans Linkim","12345678","kobi45678");
-this.satislarim();
-this.bilgilerim();
+//this.referans_linkim("Referans Linkim","12345678","kobi45678");
+//this.satislarim();
+//this.bilgilerim();
 
-Exp_Ref_List_Adapter exp_ref_list_adapter=new Exp_Ref_List_Adapter(SizeOzel.this.getActivity());
+/*Exp_Ref_List_Adapter exp_ref_list_adapter=new Exp_Ref_List_Adapter(SizeOzel.this.getActivity());
 
         final ExpandableListView exp_ref = (ExpandableListView)root.findViewById(R.id.exp_referans_linkim);
 
@@ -122,9 +126,94 @@ Exp_Ref_List_Adapter exp_ref_list_adapter=new Exp_Ref_List_Adapter(SizeOzel.this
                     }
                 }
             }
+        });*/
+
+
+//        Expandable expandable_ref = root.findViewById(R.id.expandable_referans);
+//
+//        expandable_ref.setExpandingListener(new ExpandingListener() {
+//            @Override
+//            public void onExpanded() {
+//                //some stuff on expand
+//            }
+//
+//            @Override
+//            public void onCollapsed() {
+//                //some stuff on collapse
+//            }
+//        });
+//
+//        Expandable expandable_sat = root.findViewById(R.id.expandable_referans);
+//
+//        expandable_sat.setExpandingListener(new ExpandingListener() {
+//            @Override
+//            public void onExpanded() {
+//                //some stuff on expand
+//            }
+//
+//            @Override
+//            public void onCollapsed() {
+//                //some stuff on collapse
+//            }
+//        });
+//
+//
+//        Expandable expandable_bil = root.findViewById(R.id.expandable_referans);
+//
+//        expandable_bil.setExpandingListener(new ExpandingListener() {
+//            @Override
+//            public void onExpanded() {
+//                //some stuff on expand
+//            }
+//
+//            @Override
+//            public void onCollapsed() {
+//                //some stuff on collapse
+//            }
+//        });
+
+
+        final LinearLayout innerLayout1=(LinearLayout)root.findViewById(R.id.innerlayout1);
+        TextView txtHeader=(TextView)root.findViewById(R.id.header1);
+        txtHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (innerLayout1.getVisibility()==View.GONE)
+                    innerLayout1.setVisibility(View.VISIBLE);
+                else
+                    innerLayout1.setVisibility(View.GONE);
+
+            }
         });
 
 
+        final LinearLayout innerLayout2=(LinearLayout)root.findViewById(R.id.innerlayout2);
+        TextView txtHeader2=(TextView)root.findViewById(R.id.header2);
+        txtHeader2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (innerLayout2.getVisibility()==View.GONE)
+                    innerLayout2.setVisibility(View.VISIBLE);
+                else
+                    innerLayout2.setVisibility(View.GONE);
+
+            }
+        });
+
+
+
+        final LinearLayout innerLayout3=(LinearLayout)root.findViewById(R.id.innerlayout3);
+        TextView txtHeader3=(TextView)root.findViewById(R.id.header3);
+        txtHeader3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (innerLayout3.getVisibility()==View.GONE)
+                    innerLayout3.setVisibility(View.VISIBLE);
+                else
+                    innerLayout3.setVisibility(View.GONE);
+
+            }
+        });
 
 
 
@@ -137,89 +226,6 @@ Exp_Ref_List_Adapter exp_ref_list_adapter=new Exp_Ref_List_Adapter(SizeOzel.this
 
 
 
-    // Referansım linkim data assign
-    private void referans_linkim(String name,String temsil_kod,String kobi_kod)
-    {
-        if(this.ref_groupList == null)
-        {
-            this.ref_groupList = new ArrayList<String>();
-        }
-
-        if(this.ref_childListMap == null)
-        {
-            this.ref_childListMap = new HashMap<String, List<String>>();
-        }
-
-        if(!this.ref_groupList.contains(name)) {
-            this.ref_groupList.add(name);
-        }
-
-        // Create child list.
-        List<String> childList = new ArrayList<String>();
-        childList.add("Temsilci Kodu:  " + temsil_kod);
-        childList.add("Kobi Kodu:  " + kobi_kod);
-
-        // Add child data list in the map, key is group name.
-        this.ref_childListMap.put(name, childList);
-    }
-
-
-    // Satışlarım
-    private void satislarim()
-    {
-        if(this.satis_groupList == null)
-        {
-            this.satis_groupList = new ArrayList<String>();
-        }
-
-        if(this.satis_childListMap == null)
-        {
-            this.satis_childListMap = new HashMap<String, List<String>>();
-        }
-
-        if(!this.satis_groupList.contains("Satışlarım")) {
-            this.satis_groupList.add("Satışlarım");
-        }
-
-        // Create child list.
-        List<String> childList = new ArrayList<String>();
-        childList.add("Satış Yap");
-        childList.add("Satılan Ürünler");
-        childList.add("Devam eden satışlar");
-        childList.add("Satılamayanlar");
-        // Add child data list in the map, key is group name.
-        this.satis_childListMap.put("Satışlarım", childList);
-    }
-
-
-
-    // Bilgilerim
-    private void bilgilerim()
-    {
-        if(this.bilgi_groupList == null)
-        {
-            this.bilgi_groupList = new ArrayList<String>();
-        }
-
-        if(this.bilgi_childListMap == null)
-        {
-            this.bilgi_childListMap = new HashMap<String, List<String>>();
-        }
-
-        if(!this.bilgi_groupList.contains("Bilgilerim")) {
-            this.bilgi_groupList.add("Bilgilerim");
-        }
-
-        // Create child list.
-        List<String> childList = new ArrayList<String>();
-        childList.add("Kişisel Bilgilerim");
-        childList.add("Şifre Güncelle");
-        childList.add("Adres Bilgilerim");
-        childList.add("Banka Bilgilerim");
-        childList.add("Fatura Bilgilerim");
-        // Add child data list in the map, key is group name.
-        this.bilgi_childListMap.put("Bilgilerim", childList);
-    }
 
 
 

@@ -29,10 +29,14 @@
         android:layout_marginTop="95dp"
         />
 
+
+
+
+
     <ExpandableListView
         android:id="@+id/exp_referans_linkim"
         android:layout_width="match_parent"
-        android:layout_height="49dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="105dp"
 
         android:layout_weight="1"

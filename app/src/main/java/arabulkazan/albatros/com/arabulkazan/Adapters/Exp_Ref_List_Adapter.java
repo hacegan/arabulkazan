@@ -13,6 +13,7 @@ import java.util.List;
 
 
 import arabulkazan.albatros.com.arabulkazan.MainActivity;
+import arabulkazan.albatros.com.arabulkazan.R;
 
 import static arabulkazan.albatros.com.arabulkazan.Fragments.SizeOzel.ref_childListMap;
 import static arabulkazan.albatros.com.arabulkazan.Fragments.SizeOzel.ref_groupList;
@@ -80,6 +81,10 @@ public class Exp_Ref_List_Adapter implements ExpandableListAdapter {
         // Create the group view object.
         LinearLayout groupLayoutView = new LinearLayout(context);
         groupLayoutView.setOrientation(LinearLayout.HORIZONTAL);
+
+
+
+
 
         // Create and add a textview in returned group view.
         String groupText = ref_groupList.get(groupIndex);

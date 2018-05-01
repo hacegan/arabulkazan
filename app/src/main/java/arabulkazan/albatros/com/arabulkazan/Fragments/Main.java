@@ -1,5 +1,8 @@
 package arabulkazan.albatros.com.arabulkazan.Fragments;
 
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
@@ -8,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
@@ -108,98 +113,7 @@ private ExpandableListView exp_gunfirsat,exp_on_egitim,exp_on_ar_kir,exp_on_sig,
 
 
 
-exp_gunfirsat=root.findViewById(R.id.exp_gunun_firsatlari);
-exp_on_egitim=root.findViewById(R.id.exp_online_egitim);
-exp_on_ar_kir=root.findViewById(R.id.exp_online_arac_kiralama);
-exp_on_sig=root.findViewById(R.id.exp_online_sigorta);
-exp_on_fa=root.findViewById(R.id.exp_online_fatura);
 
-Exp_Main_Fragment_List_Adapter exp_main_fragment_list_adapter=new Exp_Main_Fragment_List_Adapter(Main.this.getActivity());
-
-exp_on_egitim.setAdapter(exp_main_fragment_list_adapter);
-exp_on_ar_kir.setAdapter(exp_main_fragment_list_adapter);
-exp_on_sig.setAdapter(exp_main_fragment_list_adapter);
-exp_on_fa.setAdapter(exp_main_fragment_list_adapter);
-
-exp_on_egitim.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-    @Override
-    public void onGroupExpand(int groupIndex) {
-
-        // Get total group size.
-        int groupListSize = groupList.size();
-
-        // Close other expanded group.
-        for(int i=0;i < groupListSize; i++) {
-            if(i!=groupIndex) {
-                exp_on_egitim.collapseGroup(i);
-            }
-        }
-
-
-    }
-});
-
-exp_on_ar_kir.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-    @Override
-    public void onGroupExpand(int groupIndex) {
-
-
-        // Get total group size.
-        int groupListSize = groupList.size();
-
-        // Close other expanded group.
-        for(int i=0;i < groupListSize; i++) {
-            if(i!=groupIndex) {
-                exp_on_ar_kir.collapseGroup(i);
-            }
-        }
-
-
-
-    }
-});
-
-
-        exp_on_sig.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-            @Override
-            public void onGroupExpand(int groupIndex) {
-
-
-                // Get total group size.
-                int groupListSize = groupList.size();
-
-                // Close other expanded group.
-                for(int i=0;i < groupListSize; i++) {
-                    if(i!=groupIndex) {
-                        exp_on_sig.collapseGroup(i);
-                    }
-                }
-
-
-
-            }
-        });
-
-
-        exp_on_fa.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-            @Override
-            public void onGroupExpand(int groupIndex) {
-
-
-                // Get total group size.
-                int groupListSize = groupList.size();
-
-                // Close other expanded group.
-                for(int i=0;i < groupListSize; i++) {
-                    if(i!=groupIndex) {
-                        exp_on_fa.collapseGroup(i);
-                    }
-                }
-
-
-
-            }
-        });
 
 
 
@@ -231,6 +145,71 @@ fragmentTransaction.remove(Main.this);
 
 
 
+
+
+
+        final LinearLayout innerLayout1=(LinearLayout)root.findViewById(R.id.innerlayout1);
+        TextView txtHeader=(TextView)root.findViewById(R.id.online_egitim);
+
+
+        txtHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (innerLayout1.getVisibility()==View.GONE)
+                    innerLayout1.setVisibility(View.VISIBLE);
+                else
+                    innerLayout1.setVisibility(View.GONE);
+
+            }
+        });
+
+
+        final LinearLayout innerLayout2=(LinearLayout)root.findViewById(R.id.innerlayout2);
+        TextView txtHeader2=(TextView)root.findViewById(R.id.online_arac_kiralama);
+        txtHeader2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (innerLayout2.getVisibility()==View.GONE)
+                    innerLayout2.setVisibility(View.VISIBLE);
+                else
+                    innerLayout2.setVisibility(View.GONE);
+
+            }
+        });
+
+
+
+        final LinearLayout innerLayout3=(LinearLayout)root.findViewById(R.id.innerlayout3);
+        TextView txtHeader3=(TextView)root.findViewById(R.id.online_sigorta);
+        txtHeader3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (innerLayout3.getVisibility()==View.GONE)
+                    innerLayout3.setVisibility(View.VISIBLE);
+                else
+                    innerLayout3.setVisibility(View.GONE);
+
+            }
+        });
+
+
+        final LinearLayout innerLayout4=(LinearLayout)root.findViewById(R.id.innerlayout4);
+        TextView txtHeader4=(TextView)root.findViewById(R.id.online_fatura);
+        txtHeader4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (innerLayout4.getVisibility()==View.GONE)
+                    innerLayout4.setVisibility(View.VISIBLE);
+                else
+                    innerLayout4.setVisibility(View.GONE);
+
+            }
+        });
+
+
+
+
+
         return root;
 
     }
@@ -243,107 +222,6 @@ fragmentTransaction.remove(Main.this);
 
 
 
-    // online_egitim
-    private void online_egitim()
-    {
-        if(this.groupList == null)
-        {
-            this.groupList = new ArrayList<String>();
-        }
-
-        if(this.childListMap == null)
-        {
-            this.childListMap = new HashMap<String, List<String>>();
-        }
-
-        if(!this.groupList.contains("ONLİNE EĞİTİM")) {
-            this.groupList.add("ONLİNE EĞİTİM");
-        }
-
-        // Create child list.
-        List<String> childList = new ArrayList<String>();
-        childList.add(""+R.drawable.online_egitim_anasayfa_exp);
-
-        // Add child data list in the map, key is group name.
-        this.childListMap.put("ONLİNE EĞİTİM", childList);
-    }
-
-
-    // online_arac_kiralama
-    private void online_arac_kiralama()
-    {
-        if(this.groupList == null)
-        {
-            this.groupList = new ArrayList<String>();
-        }
-
-        if(this.childListMap == null)
-        {
-            this.childListMap = new HashMap<String, List<String>>();
-        }
-
-        if(!this.groupList.contains("ONLİNE ARAÇ KİRALAMA")) {
-            this.groupList.add("ONLİNE ARAÇ KİRALAMA");
-        }
-
-        // Create child list.
-        List<String> childList = new ArrayList<String>();
-        childList.add(""+R.drawable.online_arac_kiralama_anasayfa_exp);
-
-        // Add child data list in the map, key is group name.
-        this.childListMap.put("ONLİNE ARAÇ KİRALAMA", childList);
-    }
-
-    // online_sigorta
-    private void online_sigorta()
-    {
-        if(this.groupList == null)
-        {
-            this.groupList = new ArrayList<String>();
-        }
-
-        if(this.childListMap == null)
-        {
-            this.childListMap = new HashMap<String, List<String>>();
-        }
-
-        if(!this.groupList.contains("ONLİNE SİGORTA")) {
-            this.groupList.add("ONLİNE SİGORTA");
-        }
-
-        // Create child list.
-        List<String> childList = new ArrayList<String>();
-        childList.add(""+R.drawable.online_sigorta_anasayfa_exp);
-
-        // Add child data list in the map, key is group name.
-        this.childListMap.put("ONLİNE SİGORTA", childList);
-    }
-
-
-    // online_fatura
-    private void online_fatura()
-    {
-        if(this.groupList == null)
-        {
-            this.groupList = new ArrayList<String>();
-        }
-
-        if(this.childListMap == null)
-        {
-            this.childListMap = new HashMap<String, List<String>>();
-        }
-
-        if(!this.groupList.contains("ONLİNE FATURA")) {
-            this.groupList.add("ONLİNE FATURA");
-        }
-
-        // Create child list.
-        List<String> childList = new ArrayList<String>();
-        childList.add(""+R.drawable.online_fatura_anasayfa_exp);
-
-        // Add child data list in the map, key is group name.
-        this.childListMap.put("ONLİNE FATURA", childList);
-    }
 
 
 

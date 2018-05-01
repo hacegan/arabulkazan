@@ -12,18 +12,6 @@
         app:cardElevation="3dp"
         app:contentPadding="3dp">
 
-        <!--    <arabulkazan.albatros.com.arabulkazan.CustomUI.MyTextViewBlack
-                android:id="@+id/main_text_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Hoşgeldin Ömer Çakıcı!"
-                android:textAlignment="textEnd"
-                android:gravity="end"
-                android:layout_marginRight="100dp"
-                android:textColor="#000"
-                android:textSize="18sp"
-                android:textStyle="bold" />-->
 
         <Button
             android:layout_width="match_parent"
@@ -104,63 +92,180 @@
             >
 
 
-            <ExpandableListView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:id="@+id/exp_gunun_firsatlari"
-                ></ExpandableListView>
+                android:layout_height="wrap_content"
+                android:id="@+id/dislayout"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Online Eğitim"
+                        android:id="@+id/online_egitim"
+                        android:textAlignment="center"
 
-            <ExpandableListView
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/innerlayout1"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/online_egitim_anasayfa_exp"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+            //Online Araç
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:id="@+id/exp_online_egitim"
-                ></ExpandableListView>
+                android:layout_height="wrap_content"
+                android:id="@+id/dislayout2"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Online Araç Kiralama"
+                        android:id="@+id/online_arac_kiralama"
+                        android:textAlignment="center"
 
-            <ExpandableListView
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/innerlayout2"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/online_arac_kiralama_anasayfa_exp"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            //Online Sigorta
+
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:id="@+id/exp_online_arac_kiralama"
-                ></ExpandableListView>
+                android:layout_height="wrap_content"
+                android:id="@+id/dislayout3"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Online Sigorta"
+                        android:id="@+id/online_sigorta"
+                        android:textAlignment="center"
+
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/innerlayout3"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/online_sigorta_anasayfa_exp"
+                        />
 
 
-            <ExpandableListView
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+            //Online Fatura
+
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:id="@+id/exp_online_sigorta"
-                ></ExpandableListView>
+                android:layout_height="wrap_content"
+                android:id="@+id/dislayout4"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Online Fatura"
+                        android:id="@+id/online_fatura"
+                        android:textAlignment="center"
 
-            <ExpandableListView
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:id="@+id/exp_online_fatura"
-                ></ExpandableListView>
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/innerlayout4"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/online_fatura_anasayfa_exp"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
 
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- <ExpandableListView
-         android:id="@+id/lvExp"
-         android:layout_height="match_parent"
-         android:layout_width="match_parent"/>-->
-
-    <!--
-    <ImageSwitcher
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ok_left"
-        >
-
-    </ImageSwitcher>
-
-    <ImageSwitcher
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ok_right"
-        >
-
-
-    </ImageSwitcher>-->
 
 
 
@@ -174,53 +279,8 @@
 
 
 
-    <!--
-    <Button
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:id="@+id/logoutbtn"
-        android:text="ÇIKIŞ YAP"
-        android:layout_marginTop="50dp"
-        />
--->
 
-    <!--   <android.support.v7.widget.CardView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="10dp"
-           app:cardCornerRadius="3dp"
-           app:cardElevation="3dp"
-           app:contentPadding="3dp">
 
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:orientation="horizontal">
-
-               <arabulkazan.albatros.com.arabulkazan.CustomUI.MyTextViewBold
-                   android:id="@+id/main_txtReferansNum"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:text="Referans Numaran:4200025"
-                   android:textAlignment="center"
-                   android:textColor="#000"
-                   android:textSize="18sp"
-                   android:textStyle="bold" />
-
-               <arabulkazan.albatros.com.arabulkazan.CustomUI.MyCustomButton
-                   android:id="@+id/button"
-                   style="@style/button_phenomena_regular"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:drawableLeft="@drawable/share"
-                   android:elevation="4dp"
-                   android:text="Paylaş"
-                   android:textSize="18sp" />
-           </LinearLayout>
-
-       </android.support.v7.widget.CardView>-->
 
 
 </LinearLayout>
