@@ -1,52 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-        <TextView
-            android:layout_width="151dp"
-            android:layout_height="wrap_content"
-            android:text="T.C Kimlik Numaraniz : " />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/resetpasstc"
-            />
-
-
-    </LinearLayout>
-
-<LinearLayout
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout3"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@mipmap/ana"
+    tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-        android:layout_width="153dp"
-        android:layout_height="wrap_content"
-        android:text="Telefon Numaranız : " />
-
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="240dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="16dp"
+        android:src="@drawable/center_logobeyaz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/resetpasstelno"
-        />
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/bkgd_transparent1"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint=""
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColorHint="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/kayit_tamam_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.271" />
 
-
-</LinearLayout>
+    <EditText
+        android:id="@+id/resetpasstc"
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="275dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bkgd_transparent1"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint=""
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColorHint="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/sifre_sifirla_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetpasstelno"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/sifre_sifirla_btn"
+
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="259dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="104dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/background_signup"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Sıfırla"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="ŞİFREMİ SIFIRLA"
-        android:id="@+id/resetpassbtn"
-        />
-</LinearLayout>
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Tel No"
+        android:textColor="#fff"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.18" />
+
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="91dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Tc NO"
+        android:textColor="#fff"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.058" />
+
+
+</android.support.constraint.ConstraintLayout>

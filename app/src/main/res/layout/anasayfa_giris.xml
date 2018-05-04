@@ -1,128 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/linearLayout4"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/whiteback3"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
-    >
+
+    <!-- Here you can put your logo or brand name -->
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo"
-        android:layout_marginTop="100dp"
-        />
+        android:id="@+id/imageView7"
+        android:layout_width="287dp"
+        android:layout_height="156dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="16dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.014" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="100dp"
-        android:layout_marginRight="30dp"
-        >
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="302dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="T.C Kimlik Numaranız"
+        android:inputType="number"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.377" />
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_account_circle_black_24dp"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text=""
-            android:background="@drawable/turuncu_pembe_et"
-
-            />
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-
-
-    />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        >
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_account_circle_black_24dp"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text=""
-            android:background="@drawable/turuncu_pembe_et"
-
-            />
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="302dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:drawableLeft="@drawable/pass"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Şifreniz"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.527" />
 
 
-    </LinearLayout>
 
-  <!--  <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Şifremi Unuttum"
-        android:layout_marginLeft="200dp"
-        android:textColor="@drawable/turuncu_pembe_et"
-        android:background="@null"
-
-        />-->
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
-
-    <com.lightfire.gradienttextcolor.GradientTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="170dp"
-        android:text="ŞİFREMİ UNUTTUM"
-        android:textColor="#d83737"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:gradientEnd="#BA2742"
-        app:gradientStart="#E34F20"
-
-        />
 
     <TextView
+        android:id="@+id/textView"
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/balik"
-        android:layout_marginLeft="10dp"
-        />
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
 
-</LinearLayout>
-
+        android:layout_marginLeft="136dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Şifremi unuttum"
+        android:textColor="#ec5121"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView9"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/button3"
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="206dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/btndeneme"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Giriş Yap"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.87" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GİRİŞ"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/turuncu_pembe_btn_et"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editText3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintVertical_bias="0.059"
+        app:srcCompat="@drawable/balik" />
 
-        />
 
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

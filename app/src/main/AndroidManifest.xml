@@ -49,7 +49,7 @@
             </intent-filter>
         </receiver>
 
-<activity android:name=".anasayfa_giris"></activity>
+<activity android:name=".Fragments.anasayfa_giris"></activity>
 
 
 

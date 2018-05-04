@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import arabulkazan.albatros.com.arabulkazan.Helpers.UI;
 import arabulkazan.albatros.com.arabulkazan.R;
 import arabulkazan.albatros.com.arabulkazan.Adapters.*;
 
@@ -34,7 +35,7 @@ public class SizeOzel  extends android.support.v4.app.Fragment {
     public static List<String> bilgi_groupList = null;
     public static Map<String, List<String>> bilgi_childListMap = null;
 
-
+static TextView temsilci_tv,kobi_tv;
 
     @Nullable
     @Override
@@ -172,6 +173,11 @@ public class SizeOzel  extends android.support.v4.app.Fragment {
 //            }
 //        });
 
+        temsilci_tv=root.findViewById(R.id.temsilci_kod);
+        kobi_tv=root.findViewById(R.id.kobi_kod);
+
+        temsilci_tv.setText(temsilci_tv.getText().toString()+UI.getString(SizeOzel.this.getActivity(),"myReferans"));//null dönüyor
+        kobi_tv.setText(kobi_tv.getText().toString()+"kobi"+UI.getString(SizeOzel.this.getActivity(),"myReferans"));
 
         final LinearLayout innerLayout1=(LinearLayout)root.findViewById(R.id.innerlayout1);
         TextView txtHeader=(TextView)root.findViewById(R.id.header1);

@@ -1,45 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/ana"
-android:theme="@style/NoActionBar"
 
-    >
+    android:theme="@style/NoActionBar"
+    tools:layout_editor_absoluteY="81dp">
 
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="72dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:fitsSystemWindows="true"
-         />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012"
+        app:srcCompat="@drawable/center_logobeyaz" />
 
-    //logo_calismayuzeyi1di
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.01999998"
+        app:srcCompat="@drawable/logotextnone" />
+
 
     <Button
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
-        android:background="@mipmap/giris_kaydol_btnlar"
-       android:hint="GİRİŞ YAP"
-        android:textAlignment="center"
-android:id="@+id/loginbtn"
-        android:textColor="#FFFFFF"
+        android:id="@+id/loginbtn"
 
-        />
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bkgd_transparent1"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="GİRİŞ YAP"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.24000001" />
+
 
     <Button
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
-        android:background="@mipmap/giris_kaydol_btnlar"
-        android:hint="KAYIT OL"
-        android:layout_marginLeft="50dp"
-        android:textColor="#FF3333"
         android:id="@+id/registerbtn"
-        />
-</LinearLayout>
+
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/background_login"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="KAYDOL"
+        android:textAllCaps="false"
+        android:textColor="#f16f7d"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginbtn"
+        app:layout_constraintVertical_bias="0.095" />
+
+
+</android.support.constraint.ConstraintLayout>

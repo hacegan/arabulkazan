@@ -14,6 +14,7 @@ import android.widget.Button;
 import arabulkazan.albatros.com.arabulkazan.Fragments.Main;
 import arabulkazan.albatros.com.arabulkazan.Fragments.NotificationRemember;
 import arabulkazan.albatros.com.arabulkazan.Fragments.Register;
+import arabulkazan.albatros.com.arabulkazan.Fragments.anasayfa_giris;
 import arabulkazan.albatros.com.arabulkazan.Helpers.UI;
 import arabulkazan.albatros.com.arabulkazan.R;
 
@@ -33,18 +34,26 @@ Button loginbtn,registerbtn;
             @Override
             public void onClick(View view) {
 
-                Main nextFrag= new Main();
+                anasayfa_giris nextFrag= new anasayfa_giris();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frameLayout, nextFrag,"findThisFragment")
                         .addToBackStack(null)
                         .commit();
 
-                UI.setString(getActivity(),"pass","012345");
 
-                Intent i = Anasayfa_Giris_Kaydol.this.getActivity().getPackageManager()
-                        .getLaunchIntentForPackage(Anasayfa_Giris_Kaydol.this.getActivity().getPackageName() );
-             //   i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(i);
+
+//                Main nextFrag= new Main();
+//                getActivity().getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.frameLayout, nextFrag,"findThisFragment")
+//                        .addToBackStack(null)
+//                        .commit();
+//
+//                UI.setString(getActivity(),"pass","012345");
+//
+//                Intent i = Anasayfa_Giris_Kaydol.this.getActivity().getPackageManager()
+//                        .getLaunchIntentForPackage(Anasayfa_Giris_Kaydol.this.getActivity().getPackageName() );
+//             //   i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(i);
 
 
 
@@ -56,17 +65,17 @@ Button loginbtn,registerbtn;
             @Override
             public void onClick(View view) {
 
-             /*   Register nextFrag= new Register();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frameLayout, nextFrag,"findThisFragment")
-                        .addToBackStack(null)
-                        .commit();*/
-
-                NotificationRemember nextFrag= new NotificationRemember();
+                Register nextFrag= new Register();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frameLayout, nextFrag,"findThisFragment")
                         .addToBackStack(null)
                         .commit();
+
+//                NotificationRemember nextFrag= new NotificationRemember();
+//                getActivity().getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.frameLayout, nextFrag,"findThisFragment")
+//                        .addToBackStack(null)
+//                        .commit();
 
 
 

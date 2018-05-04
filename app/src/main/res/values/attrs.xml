@@ -5,6 +5,20 @@
     </declare-styleable>
 
 
+<string-array name="bildirim_tekrar">
+    <item>10 dk sonra</item>
+    <item>15 dk sonra</item>
+    <item>20 dk sonra</item>
+    <item>30 dk sonra</item>
+    <item>1 saat sonra</item>
+    <item>2 saat sonra</item>
+    <item>3 saat sonra</item>
+    <item>12 saat sonra</item>
+    <item>1 gün sonra</item>
 
+
+
+
+</string-array>
 
 </resources>

@@ -1,167 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
-    android:orientation="vertical">
+    android:background="@mipmap/ana">
 
-    <TextView
-        android:id="@+id/text_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/editbox_dropdown_light_frame"
-        android:padding="15dp"
-        android:phoneNumber="true"
-        android:text="@string/wellcome_app"
-        android:textAlignment="center"
-        android:textColor="#664411"
-        android:textSize="18sp" />
+    <LinearLayout
+        android:layout_width="390dp"
+        android:layout_height="602dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:padding="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/center_logobeyaz" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@android:drawable/editbox_background"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/editTc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="T.C. Kimlik Numaranız"
-                    android:inputType="numberSigned"
-                    android:maxLength="11"
-                    android:text="15287263802" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@android:drawable/editbox_background"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/editAdi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Adınız"
-                    android:inputType="textCapWords"
-                    android:maxLength="50"
-                    android:text="ömer" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:background="@android:drawable/editbox_background"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/editSoyadi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Soyadınız"
-                    android:inputType="textCapWords"
-                    android:maxLength="50"
-                    android:text="çakıcı" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:background="@android:drawable/editbox_background"
-                android:orientation="vertical">
-
-                <Spinner
-                    android:id="@+id/sp_Iller"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:background="@android:drawable/editbox_background"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/editCepTel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Cep Telefonunuz Örn: 5431234567"
-                    android:inputType="numberSigned"
-                    android:maxLength="10"
-                    android:text="5434697533" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:background="@android:drawable/editbox_background"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/editSifre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Şifrenizi Yazınız"
-                    android:inputType="textPassword"
-                    android:maxLength="32" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@android:drawable/editbox_background"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/editRef"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Referans Numaranız(Varsa)"
-                    android:inputType="numberSigned"
-                    android:maxLength="10" />
-
-            </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
 
             <Button
-                android:id="@+id/btnKaydet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Kayıt Ol" />
-        </LinearLayout>
-    </ScrollView>
+                android:id="@+id/button5"
+                style="@style/Base.TextAppearance.AppCompat.Body1"
 
-</LinearLayout>
+                android:layout_width="75dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_login"
+                android:text="KOBİ"
+                android:textColor="#f16f7d"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/editTc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.782"
+                app:layout_constraintStart_toEndOf="@+id/button6"
+                app:layout_constraintTop_toBottomOf="@+id/imageView9"
+                app:layout_constraintVertical_bias="0.229" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/Base.TextAppearance.AppCompat.Body1"
+
+                android:layout_width="75dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+
+                android:layout_marginLeft="80dp"
+                android:layout_marginStart="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_signup"
+                android:text="BİREYSEL"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/editTc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView9"
+                app:layout_constraintVertical_bias="0.222" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editAdi"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bkgd_transparent1"
+            android:ems="10"
+            android:hint="Adınız"
+            android:inputType="textCapWords"
+            android:maxLength="50"
+            android:padding="8dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editSoyadi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_header"
+            app:layout_constraintVertical_bias="0.981" />
+
+        <EditText
+            android:id="@+id/editTc"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bkgd_transparent1"
+            android:ems="10"
+            android:hint="T.C Kimlik Numaranız"
+            android:inputType="numberSigned"
+            android:maxLength="11"
+            android:padding="8dp"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.988" />
+
+        <EditText
+            android:id="@+id/editSoyadi"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bkgd_transparent1"
+            android:ems="10"
+            android:hint="Soyadınız"
+            android:inputType="textCapWords"
+            android:maxLength="50"
+            android:padding="8dp"
+            android:text=""
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/sp_Iller"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Spinner
+            android:id="@+id/sp_Iller"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bkgd_transparent1"
+            android:padding="8dp"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editCepTel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/editSifre"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bkgd_transparent1"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:maxLength="32"
+            android:padding="8dp"
+          android:hint="Şifrenizi Yazınız"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editRef"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/editCepTel"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bkgd_transparent1"
+            android:ems="10"
+            android:hint="Cep Telefonunuz Örn: 5431234567"
+            android:inputType="numberSigned"
+            android:maxLength="10"
+            android:padding="8dp"
+            android:text=""
+            android:textColor="#fff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editSifre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_header"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/editRef"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bkgd_transparent1"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:maxLength="10"
+            android:padding="8dp"
+            android:hint="Referans No"
+            android:text=""
+            android:textColor="#fff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnKaydet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_header"
+            app:layout_constraintVertical_bias="0.941" />
+
+        <Button
+            android:id="@+id/btnKaydet"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/background_signup"
+            android:text="Kayıt Ol"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/text_header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:drawable/editbox_dropdown_light_frame"
+            android:padding="15dp"
+            android:phoneNumber="true"
+            android:text="@string/wellcome_app"
+            android:textAlignment="center"
+            android:textColor="#664411"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

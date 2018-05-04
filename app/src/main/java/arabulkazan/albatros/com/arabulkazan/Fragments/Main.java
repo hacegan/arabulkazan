@@ -25,6 +25,7 @@ import java.util.Map;
 
 import arabulkazan.albatros.com.arabulkazan.Adapters.Exp_Main_Fragment_List_Adapter;
 
+import arabulkazan.albatros.com.arabulkazan.MainActivity;
 import arabulkazan.albatros.com.arabulkazan.R;
 
 
@@ -123,7 +124,6 @@ private ExpandableListView exp_gunfirsat,exp_on_egitim,exp_on_ar_kir,exp_on_sig,
         @Override
         public void onClick(View view) {
             System.out.println("Click olayı oldu");
-SizeOzel sizeOzel=new SizeOzel();
 
             //getFragmentManager().beginTransaction().replace(R.id.frameLayout,sizeOzel).commit();
            /* getActivity().getSupportFragmentManager().beginTransaction()
@@ -131,11 +131,13 @@ SizeOzel sizeOzel=new SizeOzel();
                     .addToBackStack(null)
                     .commit();*/
 
-            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-fragmentTransaction.addToBackStack(null);
-fragmentTransaction.remove(Main.this);
-            fragmentTransaction.replace(R.id.container,sizeOzel);
-            fragmentTransaction.commit();
+//            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+//fragmentTransaction.addToBackStack(null);
+//fragmentTransaction.remove(Main.this);
+//            fragmentTransaction.replace(R.id.container,sizeOzel);
+//            fragmentTransaction.commit();
+
+            MainActivity.viewPager.setCurrentItem(MainActivity.viewPager.getAdapter().getCount()-1);
 
 
 
@@ -149,7 +151,7 @@ fragmentTransaction.remove(Main.this);
 
 
         final LinearLayout innerLayout1=(LinearLayout)root.findViewById(R.id.innerlayout1);
-        TextView txtHeader=(TextView)root.findViewById(R.id.online_egitim);
+        LinearLayout txtHeader=(LinearLayout)root.findViewById(R.id.online_egitim);
 
 
         txtHeader.setOnClickListener(new View.OnClickListener() {
@@ -165,7 +167,7 @@ fragmentTransaction.remove(Main.this);
 
 
         final LinearLayout innerLayout2=(LinearLayout)root.findViewById(R.id.innerlayout2);
-        TextView txtHeader2=(TextView)root.findViewById(R.id.online_arac_kiralama);
+        LinearLayout txtHeader2=(LinearLayout)root.findViewById(R.id.online_arac_kiralama);
         txtHeader2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -180,7 +182,7 @@ fragmentTransaction.remove(Main.this);
 
 
         final LinearLayout innerLayout3=(LinearLayout)root.findViewById(R.id.innerlayout3);
-        TextView txtHeader3=(TextView)root.findViewById(R.id.online_sigorta);
+        LinearLayout txtHeader3=(LinearLayout)root.findViewById(R.id.online_sigorta);
         txtHeader3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -194,7 +196,7 @@ fragmentTransaction.remove(Main.this);
 
 
         final LinearLayout innerLayout4=(LinearLayout)root.findViewById(R.id.innerlayout4);
-        TextView txtHeader4=(TextView)root.findViewById(R.id.online_fatura);
+        LinearLayout txtHeader4=(LinearLayout)root.findViewById(R.id.online_fatura);
         txtHeader4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -207,7 +209,18 @@ fragmentTransaction.remove(Main.this);
         });
 
 
+        final LinearLayout innerLayoutgun=(LinearLayout)root.findViewById(R.id.innerlayoutgun);
+        LinearLayout txtHeader5=(LinearLayout)root.findViewById(R.id.gunun_firsatlari);
+        txtHeader5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (innerLayoutgun.getVisibility()==View.GONE)
+                    innerLayoutgun.setVisibility(View.VISIBLE);
+                else
+                    innerLayoutgun.setVisibility(View.GONE);
 
+            }
+        });
 
 
         return root;

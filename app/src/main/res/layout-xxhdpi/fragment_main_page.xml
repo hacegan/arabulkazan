@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
 
 
     <android.support.v7.widget.CardView
@@ -10,16 +12,18 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="3dp"
         app:cardElevation="3dp"
-        app:contentPadding="3dp">
+        app:contentPadding="3dp"
+
+        >
 
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/hosgeldin"
             android:layout_marginRight="100dp"
-            android:text="HOŞGEDİN SAMET DAĞ"
+            android:background="@drawable/hosgeldin"
             android:enabled="false"
+            android:text="HOŞGEDİN SAMET DAĞ"
             android:textColor="#FFFFFF"
 
             />
@@ -27,9 +31,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/sizeozel"
             android:layout_marginLeft="240dp"
-            />
+            android:background="@drawable/sizeozel" />
 
         <Button
             android:id="@+id/sizeozelbtn"
@@ -44,31 +47,34 @@
             android:textSize="10sp" />
 
 
-
     </android.support.v7.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+
+
         >
 
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
+            android:background="@drawable/expandable_list_bg"
             android:hint="Kobi Adı  / Ürün / Kategori / Sektör / Adres   "
+            android:textSize="15sp"
+
             />
 
         <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/arama_icon"
-            />
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/arama_icon" />
 
 
     </LinearLayout>
@@ -80,69 +86,101 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
 
             <com.daimajia.slider.library.SliderLayout
                 android:id="@+id/slider"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                />
+                android:layout_height="160dp" />
+
+            //Günün Fırsatları
 
 
-
-
-            //Online Eğitim
             <LinearLayout
+                android:id="@+id/dislayoutgun"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/dislayout"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp"
-                >
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
                 <LinearLayout
+                    android:id="@+id/gunun_firsatlari"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/expandable_list_bg"
-
-                    >
+                    android:background="@drawable/expandable_list_bg">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ONLİNE EĞİTİM"
-                        android:id="@+id/online_egitim"
+                        android:layout_marginLeft="10dp"
+                        android:text="GÜNÜN FIRSATLARI"
                         android:textAlignment="center"
                         android:textSize="24sp"
 
                         />
 
+
                     <Button
                         android:layout_width="30dp"
                         android:layout_height="15dp"
-                        android:background="@drawable/arrow_down"
                         android:layout_marginLeft="15dp"
-                        />
-
-
-
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/arrow_down" />
 
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/innerlayoutgun"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="gone"
-                    android:id="@+id/innerlayout1"
-                    >
+                    android:visibility="visible">
+
+                    <ImageSwitcher
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></ImageSwitcher>
+
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/online_egitim_anasayfa_exp"
-                        />
+                        android:background="@drawable/online_egitim_anasayfa_exp" />
+
+                    <ImageSwitcher
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></ImageSwitcher>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="STİLEVS Midi Chopper DOĞRAYICI " />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="109,99" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Detay >" />
 
 
                 </LinearLayout>
@@ -150,53 +188,106 @@
             </LinearLayout>
 
 
+            //Online Eğitim
+
+            <LinearLayout
+                android:id="@+id/dislayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/online_egitim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/expandable_list_bg">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ONLİNE EĞİTİM"
+
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+
+                        />
+
+
+                    <Button
+
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/arrow_down" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/innerlayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/online_egitim_anasayfa_exp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
 
 
             //Online Araç
 
 
             <LinearLayout
+                android:id="@+id/dislayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/dislayout2"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp"
-                >
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
                 <LinearLayout
+                    android:id="@+id/online_arac_kiralama"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="43dp"
+                    android:background="@drawable/expandable_list_bg">
 
-                    >
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Online Araç Kiralama"
-                        android:id="@+id/online_arac_kiralama"
                         android:textAlignment="center"
-                        android:textSize="24sp"
-                        />
+                        android:textSize="24sp" />
 
                     <Button
+
                         android:layout_width="30dp"
                         android:layout_height="15dp"
-                        android:background="@drawable/arrow_down"
                         android:layout_marginLeft="15dp"
-                        />
+                        android:background="@drawable/arrow_down" />
 
 
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/innerlayout2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="gone"
-                    android:id="@+id/innerlayout2"
-                    >
+                    android:visibility="visible">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/online_arac_kiralama_anasayfa_exp"
-                        />
+                        android:background="@drawable/online_arac_kiralama_anasayfa_exp" />
 
 
                 </LinearLayout>
@@ -206,107 +297,104 @@
             //Online Sigorta
 
 
-
             <LinearLayout
+                android:id="@+id/dislayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/dislayout3"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp"
-                >
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
                 <LinearLayout
+                    android:id="@+id/online_sigorta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    >
+                    android:layout_marginRight="140dp"
+                    android:background="@drawable/expandable_list_bg">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Online Sigorta"
-                        android:id="@+id/online_sigorta"
+
                         android:textAlignment="center"
                         android:textSize="24sp"
 
                         />
 
                     <Button
+
                         android:layout_width="30dp"
                         android:layout_height="15dp"
-                        android:background="@drawable/arrow_down"
                         android:layout_marginLeft="15dp"
-                        />
-
+                        android:background="@drawable/arrow_down" />
 
 
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/innerlayout3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="gone"
-                    android:id="@+id/innerlayout3"
-                    >
+                    android:visibility="visible">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/online_sigorta_anasayfa_exp"
-                        />
+                        android:background="@drawable/online_sigorta_anasayfa_exp" />
 
 
                 </LinearLayout>
 
             </LinearLayout>
-
-
-
 
 
             //Online Fatura
 
 
-
             <LinearLayout
+                android:id="@+id/dislayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/dislayout4"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp"
-                >
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
                 <LinearLayout
+                    android:id="@+id/online_fatura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="130dp"
+                    android:background="@drawable/expandable_list_bg">
 
-                    >
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Online Fatura"
-                        android:id="@+id/online_fatura"
+
                         android:textAlignment="center"
-                        android:textSize="24sp"
-                        />
+                        android:textSize="24sp" />
 
                     <Button
+
                         android:layout_width="30dp"
                         android:layout_height="15dp"
-                        android:background="@drawable/arrow_down"
-
-                        />
-
+                        android:layout_marginLeft="25dp"
+                        android:background="@drawable/arrow_down" />
 
 
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/innerlayout4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="gone"
-                    android:id="@+id/innerlayout4"
-                    >
+                    android:visibility="visible">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/online_fatura_anasayfa_exp"
-                        />
+                        android:background="@drawable/online_fatura_anasayfa_exp" />
 
 
                 </LinearLayout>
@@ -314,28 +402,8 @@
             </LinearLayout>
 
 
-
-
-
-
         </LinearLayout>
     </ScrollView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </LinearLayout>

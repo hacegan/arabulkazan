@@ -35,6 +35,7 @@ import arabulkazan.albatros.com.arabulkazan.Fragments.MyWallet;
 import arabulkazan.albatros.com.arabulkazan.Fragments.Register;
 import arabulkazan.albatros.com.arabulkazan.Fragments.Revenues;
 import arabulkazan.albatros.com.arabulkazan.Fragments.Settings;
+import arabulkazan.albatros.com.arabulkazan.Fragments.SizeOzel;
 import arabulkazan.albatros.com.arabulkazan.Helpers.UI;
 
 import static arabulkazan.albatros.com.arabulkazan.R.string.drawer_close;
@@ -81,19 +82,22 @@ private NavigationView nav_drawer;
     Main mainFrag;
     Revenues revenuesFrag;
     MyWallet myWalletFrag;
-    private ViewPager viewPager;
+    SizeOzel sizeOzelFrag;
+    public static ViewPager viewPager;
     MenuItem prevMenuItem;
     FrameLayout frameAnaSayfa;
+    ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
     private void setupViewPager(ViewPager viewPager)
     {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         mainFrag=new Main();
         revenuesFrag=new Revenues();
         myWalletFrag=new MyWallet();
-
+        sizeOzelFrag=new SizeOzel();
         adapter.addFragment(mainFrag);
         adapter.addFragment(revenuesFrag);
         adapter.addFragment(myWalletFrag);
+        adapter.addFragment(sizeOzelFrag);
         viewPager.setAdapter(adapter);
 
     }
@@ -112,6 +116,7 @@ private NavigationView nav_drawer;
 
 
         mDrawerLayout= (DrawerLayout) findViewById(R.id.container);
+
 
 
 
@@ -282,8 +287,10 @@ getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                     navigation.getMenu().getItem(0).setChecked(false);
                 }
                 Log.d("page", "onPageSelected: "+position);
-                navigation.getMenu().getItem(position).setChecked(true);
-                prevMenuItem = navigation.getMenu().getItem(position);
+                if (position<3) {
+                    navigation.getMenu().getItem(position).setChecked(true);
+                    prevMenuItem = navigation.getMenu().getItem(position);
+                }
 
             }
 
@@ -303,7 +310,7 @@ getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        System.out.println("Girdi "+item+"item id "+item.getItemId());
+      //  System.out.println("Girdi "+item+"item id "+item.getItemId());
 
         if(mToggle.onOptionsItemSelected(item)){
 return  true;

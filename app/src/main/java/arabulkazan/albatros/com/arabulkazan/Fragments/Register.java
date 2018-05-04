@@ -1,6 +1,7 @@
 package arabulkazan.albatros.com.arabulkazan.Fragments;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.SyncStateContract;
 import android.support.annotation.Nullable;
@@ -28,7 +29,7 @@ import arabulkazan.albatros.com.arabulkazan.R;
  * Created by PC on 29.03.2018.
  */
 
-public class Register extends Fragment {
+public class Register extends android.support.v4.app.Fragment {
 
 
     @Nullable
@@ -48,6 +49,7 @@ public class Register extends Fragment {
         final TextView txtReferans=(TextView)rootView.findViewById(R.id.editRef);
         final TextView txtSifre=(TextView)rootView.findViewById(R.id.editSifre);
         final Spinner spinnerIller=(Spinner)rootView.findViewById(R.id.sp_Iller);
+
         UI.loadSehirlerSpinner(this.getActivity(),spinnerIller);
 
 
@@ -56,7 +58,7 @@ public class Register extends Fragment {
             public void onClick(View view) {
                 if (txtAdi.getText().toString().isEmpty()==false && txtSoyadi.getText().toString().isEmpty()==false && txtTc.getText().length()==11 &&txtCep.getText().length()==10&&txtSifre.getText().length()>3)
                 {
-                    Data.register(Register.this.getActivity(), txtTc.getText().toString(), txtAdi.getText().toString(), txtSoyadi.getText().toString(), txtCep.getText().toString(),txtSifre.getText().toString(), txtReferans.getText().toString(),String.valueOf(spinnerIller.getSelectedItemPosition()+1), new Data.OnPostExecuteListener() {
+                    Data.register(Register.this.getActivity(), txtTc.getText().toString(), txtAdi.getText().toString(), txtSoyadi.getText().toString(), txtCep.getText().toString(),txtSifre.getText().toString(), txtReferans.getText().toString(),String.valueOf(spinnerIller.getSelectedItemPosition()+1),"0", new Data.OnPostExecuteListener() {
                         @Override
                         public void onPostExecute(final String result) {
                             final Result sonuc=new Gson().fromJson(result,Result.class);
@@ -67,39 +69,66 @@ public class Register extends Fragment {
                             else
                             {
 
-                                UI.showSuccesDialog(Register.this.getActivity(), "Başarılı", "Tebrikler ,Başarıyla Üye Oldunuz. Uygulama Yeniden Başlatılacaktır.", new UI.onClick() {
-                                    @Override
-                                    public void onFinishedDialog() {
+try{
+    String cheaper=Sha1.SHA1(txtSifre.getText().toString());
+    String tc=txtTc.getText().toString();
+    UI.setString(Register.this.getActivity(),"pass",cheaper);
+    UI.setString(Register.this.getActivity(),"tc",tc);
+    UI.setString(Register.this.getActivity(),"adi",txtAdi.getText().toString());
+    UI.setString(Register.this.getActivity(),"soyadi",txtSoyadi.getText().toString());
+    UI.setString(Register.this.getActivity(),"telefon",txtCep.getText().toString());
+    UI.setString(Register.this.getActivity(),"myReferans",sonuc.getMyReferans().toString());
 
-                                        try {
-                                            String cheaper=Sha1.SHA1(txtSifre.getText().toString());
-                                            String tc=txtTc.getText().toString();
-                                            UI.setString(Register.this.getActivity(),"pass",cheaper);
-                                            UI.setString(Register.this.getActivity(),"tc",tc);
-                                            UI.setString(Register.this.getActivity(),"adi",txtAdi.getText().toString());
-                                            UI.setString(Register.this.getActivity(),"soyadi",txtSoyadi.getText().toString());
-                                            UI.setString(Register.this.getActivity(),"telefon",txtCep.getText().toString());
-                                            UI.setString(Register.this.getActivity(),"myReferans",sonuc.getMyReferans().toString());
+    UI.setString(Register.this.getActivity(),"ID",String.valueOf(sonuc.getLastID()));
 
-                                            UI.setString(Register.this.getActivity(),"ID",String.valueOf(sonuc.getLastID()));
+    UI.setString(Register.this.getActivity(),"sifre_kod",sonuc.getSifre_kod());
 
 
 
-                                            // Restart Application
-                                                    Intent i = Register.this.getActivity().getPackageManager()
-                                                    .getLaunchIntentForPackage( Register.this.getActivity().getPackageName() );
-                                            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                            startActivity(i);
-                                        } catch (NoSuchAlgorithmException e) {
-                                            e.printStackTrace();
-                                        } catch (UnsupportedEncodingException e) {
-                                            e.printStackTrace();
-                                        }
+    //Sifre girme bölümüne geçicek
+
+    Register_Tel_Sifre register_tel_sifre=new Register_Tel_Sifre();
+    android.support.v4.app.FragmentTransaction  transaction =Register.this.getActivity().getSupportFragmentManager().beginTransaction();
+    transaction.replace(R.id.frameLayout,register_tel_sifre);
+    transaction.commit();
 
 
-                                    }
-                                });
-                            }
+}
+catch (Exception e){
+
+}
+
+
+
+//                                UI.showSuccesDialog(Register.this.getActivity(), "Başarılı", "Tebrikler ,Başarıyla Üye Oldunuz. Uygulama Yeniden Başlatılacaktır.", new UI.onClick() {
+//                                    @Override
+//                                    public void onFinishedDialog() {
+//
+//                                        try {
+//
+//
+//
+//                                            // Restart Application
+//                               /*                     Intent i = Register.this.getActivity().getPackageManager()
+//                                                    .getLaunchIntentForPackage( Register.this.getActivity().getPackageName() );
+//                                            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                            startActivity(i);*/
+//
+//
+//
+//                                        } catch (NoSuchAlgorithmException e) {
+//                                            e.printStackTrace();
+//                                        } catch (UnsupportedEncodingException e) {
+//                                            e.printStackTrace();
+//                                        }
+//
+//
+//                                    }
+//                                });
+
+
+
+                            }//islem basariliysa
 
                         }
                     });

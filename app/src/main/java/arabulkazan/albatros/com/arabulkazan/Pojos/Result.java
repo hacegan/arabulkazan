@@ -14,6 +14,35 @@ public class Result {
     private int lastID;
     private String myReferans;
     private String tarih;
+    private String sifre_kod;
+    private String data;
+    private String tc;
+    private String pass;
+
+
+    public String getTc() {
+        return tc;
+    }
+
+    public void setTc(String tc) {
+        this.tc = tc;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
 
     public String getMesaj() {
         return mesaj;
@@ -64,5 +93,14 @@ public class Result {
 
     public void setTarih(String tarih) {
         this.tarih = tarih;
+    }
+
+
+    public String getSifre_kod() {
+        return sifre_kod;
+    }
+
+    public void setSifre_kod(String sifre_kod) {
+        this.sifre_kod = sifre_kod;
     }
 }

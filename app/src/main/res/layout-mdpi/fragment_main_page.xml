@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    >
 
 
     <android.support.v7.widget.CardView
@@ -10,7 +12,9 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="3dp"
         app:cardElevation="3dp"
-        app:contentPadding="3dp">
+        app:contentPadding="3dp"
+
+        >
 
 
         <Button
@@ -53,21 +57,26 @@
         android:orientation="horizontal"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
+
+
         >
 
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:hint="Kobi Adı  / Ürün / Kategori / Sektör / Adres   "
+            android:textSize="15sp"
+            android:background="@drawable/expandable_list_bg"
+
             />
 
         <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/arama_icon"
+            android:layout_marginLeft="3dp"
             />
 
 
@@ -90,6 +99,113 @@
                 android:layout_height="160dp"
                 />
 
+            //Günün Fırsatları
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dislayoutgun"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/expandable_list_bg"
+                    android:id="@+id/gunun_firsatlari"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GÜNÜN FIRSATLARI"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+
+                        />
+
+
+                    <Button
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/arrow_down"
+                        android:layout_marginRight="15dp"
+                        />
+
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/innerlayoutgun"
+                    >
+
+                    <ImageSwitcher
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></ImageSwitcher>
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/online_egitim_anasayfa_exp"
+                        />
+
+                    <ImageSwitcher
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></ImageSwitcher>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="STİLEVS Midi Chopper DOĞRAYICI "
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="109,99"
+                            />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            />
+
+
+                    </LinearLayout>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Detay >"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
 
 
 
@@ -99,30 +215,33 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dislayout"
                 android:orientation="vertical"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="40dp"
                 >
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/expandable_list_bg"
-
+                    android:id="@+id/online_egitim"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ONLİNE EĞİTİM"
-                        android:id="@+id/online_egitim"
+
                         android:textAlignment="center"
                         android:textSize="24sp"
 
                         />
 
+
                     <Button
+
                         android:layout_width="30dp"
                         android:layout_height="15dp"
-                        android:background="@drawable/arrow_down"
                         android:layout_marginLeft="15dp"
+                        android:background="@drawable/arrow_down"
+                        android:layout_marginRight="15dp"
                         />
 
 
@@ -160,28 +279,30 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dislayout2"
                 android:orientation="vertical"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="40dp"
                 >
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:layout_marginRight="43dp"
+                    android:background="@drawable/expandable_list_bg"
+                    android:id="@+id/online_arac_kiralama"
                     >
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Online Araç Kiralama"
-                        android:id="@+id/online_arac_kiralama"
                         android:textAlignment="center"
-                        android:textSize="24sp"
-                        />
+                        android:textSize="24sp" />
 
                     <Button
+
                         android:layout_width="30dp"
                         android:layout_height="15dp"
-                        android:background="@drawable/arrow_down"
                         android:layout_marginLeft="15dp"
-                        />
+                        android:background="@drawable/arrow_down" />
 
 
                 </LinearLayout>
@@ -212,29 +333,33 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dislayout3"
                 android:orientation="vertical"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="40dp"
                 >
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="140dp"
+                    android:background="@drawable/expandable_list_bg"
+                    android:id="@+id/online_sigorta"
                     >
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Online Sigorta"
-                        android:id="@+id/online_sigorta"
+
                         android:textAlignment="center"
                         android:textSize="24sp"
 
                         />
 
                     <Button
+
                         android:layout_width="30dp"
                         android:layout_height="15dp"
-                        android:background="@drawable/arrow_down"
                         android:layout_marginLeft="15dp"
-                        />
-
+                        android:background="@drawable/arrow_down" />
 
 
                 </LinearLayout>
@@ -269,29 +394,31 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dislayout4"
                 android:orientation="vertical"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="40dp"
                 >
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:layout_marginRight="130dp"
+                    android:background="@drawable/expandable_list_bg"
+                    android:id="@+id/online_fatura"
                     >
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Online Fatura"
-                        android:id="@+id/online_fatura"
+
                         android:textAlignment="center"
-                        android:textSize="24sp"
-                        />
+                        android:textSize="24sp" />
 
                     <Button
+
                         android:layout_width="30dp"
                         android:layout_height="15dp"
-                        android:background="@drawable/arrow_down"
-
-                        />
-
+                        android:layout_marginLeft="25dp"
+                        android:background="@drawable/arrow_down" />
 
 
                 </LinearLayout>
@@ -320,20 +447,6 @@
 
         </LinearLayout>
     </ScrollView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -18,7 +18,7 @@ public class Data {
         void onPostExecute(String result);
     }
 
-    public static void register(Activity act, String tc, String adi, String soyadi, String telefon, String pass, String ref, String sehir, final OnPostExecuteListener postExecuteListener) {
+    public static void register(Activity act, String tc, String adi, String soyadi, String telefon, String pass, String ref, String sehir,String is_aktif , final OnPostExecuteListener postExecuteListener) {
 
         ArrayList<NameValuePair> nm = new ArrayList<>();
         nm.add(new BasicNameValuePair("act", "newMember"));
@@ -29,6 +29,7 @@ public class Data {
         nm.add(new BasicNameValuePair("telefonNum", telefon));
         nm.add(new BasicNameValuePair("referans", ref));
         nm.add(new BasicNameValuePair("sehir", sehir));
+        nm.add(new BasicNameValuePair("is_aktif", is_aktif));
 
         new HttpGonderim(act, Constants.REST_URL, nm, false, new HttpGonderim.OnPostExecuteListener() {
             @Override
@@ -136,6 +137,71 @@ public class Data {
 
     }
 
+    public static void activate_member(Activity act,String telno, final OnPostExecuteListener postExecuteListener) {
+
+        ArrayList<NameValuePair> am = new ArrayList<>();
+        am.add(new BasicNameValuePair("act", "activation_member"));
+        am.add(new BasicNameValuePair("telno",telno));
+
+        new HttpGonderim(act, Constants.REST_URL, am, false, new HttpGonderim.OnPostExecuteListener() {
+            @Override
+            public void onPostExecute(String result) {
+
+                if (postExecuteListener != null) {
+                    postExecuteListener.onPostExecute(result);
+
+                }
+            }
+        }).execute();
+
+
+    }
+
+
+    public static void send_new_sms_kod(Activity act,String adi,String soyadi,String telno, final OnPostExecuteListener postExecuteListener) {
+
+        ArrayList<NameValuePair> am = new ArrayList<>();
+        am.add(new BasicNameValuePair("act", "send_new_sms_kod"));
+        am.add(new BasicNameValuePair("adi",telno));
+        am.add(new BasicNameValuePair("soyadi",telno));
+        am.add(new BasicNameValuePair("telefonNum",telno));
+
+        new HttpGonderim(act, Constants.REST_URL, am, false, new HttpGonderim.OnPostExecuteListener() {
+            @Override
+            public void onPostExecute(String result) {
+
+                if (postExecuteListener != null) {
+                    postExecuteListener.onPostExecute(result);
+
+                }
+            }
+        }).execute();
+
+
+    }
+
+
+
+    public static void login(Activity act, String tc, String pass, final OnPostExecuteListener postExecuteListener) {
+
+        ArrayList<NameValuePair> pt = new ArrayList<>();
+        pt.add(new BasicNameValuePair("act", "login"));
+        pt.add(new BasicNameValuePair("tc",tc));
+        pt.add(new BasicNameValuePair("pass",pass));
+
+        new HttpGonderim(act, Constants.REST_URL, pt, false, new HttpGonderim.OnPostExecuteListener() {
+            @Override
+            public void onPostExecute(String result) {
+
+                if (postExecuteListener != null) {
+                    postExecuteListener.onPostExecute(result);
+
+                }
+            }
+        }).execute();
+
+
+    }
 
 
 

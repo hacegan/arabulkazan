@@ -16,9 +16,10 @@ import com.google.gson.Gson;
 import arabulkazan.albatros.com.arabulkazan.CuzdanimAdapter;
 import arabulkazan.albatros.com.arabulkazan.Helpers.Data;
 import arabulkazan.albatros.com.arabulkazan.Helpers.UI;
+import arabulkazan.albatros.com.arabulkazan.Pojos.Result;
 import arabulkazan.albatros.com.arabulkazan.R;
 
-public class Reset_Pass extends Fragment {
+public class Reset_Pass extends android.support.v4.app.Fragment {
 
 EditText tc,telno;
 Button btn;
@@ -31,7 +32,7 @@ Button btn;
         tc=root.findViewById(R.id.resetpasstc);
         telno=root.findViewById(R.id.resetpasstelno);
 
-        btn=root.findViewById(R.id.resetpassbtn);
+        btn=root.findViewById(R.id.sifre_sifirla_btn);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,14 +42,14 @@ Button btn;
                 Data.resetpw(Reset_Pass.this.getActivity(), tc.getText().toString(), telno.getText().toString(), new Data.OnPostExecuteListener() {
                     @Override
                     public void onPostExecute(String result) {
-
+                        final Result sonuc=new Gson().fromJson(result,Result.class);
                         try {
 
-                            if(result.contains("Başarılı")){
+                            if(sonuc.getMesaj().equals("Şifre başarıyla yenilendi!")){//Buralar degisicek
                                 Toast.makeText(getContext(),"Tebrikler başarıyla şifrenizi sıfırladınız", Toast.LENGTH_SHORT);
                             }
                             else{
-                                Toast.makeText(getContext(),"Bir hata oluştu.", Toast.LENGTH_SHORT);
+                                Toast.makeText(getContext(),"Bu kadar sıklıkla şifrenizi değiştiremezsiniz!", Toast.LENGTH_SHORT);
                             }
 
 
