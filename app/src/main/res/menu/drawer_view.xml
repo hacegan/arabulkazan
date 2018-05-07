@@ -1,95 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
 
+    >
 
+<group android:id="@+id/isletme_magazam_grup">
 
-    <item android:title="İşletme Mağazam" android:icon="@drawable/isletme_magazam" >
-
-    </item>
-
-
-    <item android:title="Emlak Alsatkirala" android:icon="@drawable/emlak_alsatkirala">
-     //menu olucak
-
-         <!--   <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/center_logo"
-                android:title="Konut" />
-            <item
-                android:id="@+id/topsms"
-                android:icon="@drawable/center_logo"
-                android:title="İşyeri" />
-            <item
-                android:id="@+id/onegitim"
-                android:icon="@drawable/center_logo"
-                android:title="Arsa" />
-            <item
-                android:id="@+id/onfat"
-                android:icon="@drawable/center_logo"
-                android:title="Bina" />
-            <item
-
-                android:icon="@drawable/center_logo"
-                android:title="Turistik Tesis" />
-            <item
-
-                android:icon="@drawable/center_logo"
-                android:title="Devremülk" />-->
-
-
+    <item android:title="İşletme Mağazam" android:icon="@drawable/isletme_magazam" android:id="@+id/isletmemagazambtn" >
 
     </item>
 
+</group>
 
-    <item android:title="Alışveriş" android:icon="@drawable/alisveris">
-        <menu>
 
-        </menu>
+<group android:id="@+id/emlak_alsatkirala_grup" >
+
+    <item android:title="Emlak Alsatkirala" android:icon="@drawable/emlak_alsatkirala" android:id="@+id/emlakalsatkiralabtn">
+        //menu olucak
+
+        <!--   <item
+               android:id="@+id/nav_share"
+               android:icon="@drawable/center_logo"
+               android:title="Konut" />
+           <item
+               android:id="@+id/topsms"
+               android:icon="@drawable/center_logo"
+               android:title="İşyeri" />
+           <item
+               android:id="@+id/onegitim"
+               android:icon="@drawable/center_logo"
+               android:title="Arsa" />
+           <item
+               android:id="@+id/onfat"
+               android:icon="@drawable/center_logo"
+               android:title="Bina" />
+           <item
+
+               android:icon="@drawable/center_logo"
+               android:title="Turistik Tesis" />
+           <item
+
+               android:icon="@drawable/center_logo"
+               android:title="Devremülk" />-->
+
+
 
     </item>
 
+</group>
 
 
-    <item
 
-        android:icon="@drawable/toplu_sms"
-        android:title="Toplu SMS" />
+    <group android:id="@+id/alisveris_grup">
 
-    <item
+        <item android:title="Alışveriş" android:icon="@drawable/alisveris" android:id="@+id/alisverisbtn" >
+            <menu>
 
-        android:icon="@drawable/online_rentacar"
-        android:title="Online Rent A Car" />
+            </menu>
 
-    <item
+        </item>
+    </group>
 
-        android:icon="@drawable/online_egitim"
-        android:title="Online Eğitim" />
-    <item
 
-        android:icon="@drawable/online_fatura"
-        android:title="Online Fatura" />
+    <group android:id="@+id/toplu_sms_grup">
+
+        <item
+
+            android:icon="@drawable/toplu_sms"
+            android:title="Toplu SMS"
+            android:id="@+id/toplusmsbtn"
+            />
+    </group>
+
+
+
+    <group android:id="@+id/online_rentacar_grup">
+
+        <item
+
+            android:icon="@drawable/online_rentacar"
+            android:title="Online Rent A Car"
+            android:id="@+id/onlinerentacarbtn"
+            />
+    </group>
+
+
+    <group android:id="@+id/online_egitim_grup">
+
+        <item
+
+            android:icon="@drawable/online_egitim"
+            android:title="Online Eğitim"
+            android:id="@+id/onlineegitimbtn"
+            />
+    </group>
+
+
+    <group android:id="@+id/online_fatura_grup">
+
+        <item
+
+            android:icon="@drawable/online_fatura"
+            android:title="Online Fatura"
+            android:id="@+id/onlinefaturabtn"
+            />
+    </group>
+
+
+
+<group android:id="@+id/online_sigorta_grup">
+
     <item
 
         android:icon="@drawable/online_sigorta"
-        android:title="Online Sigorta" />
+        android:title="Online Sigorta"
+        android:id="@+id/onlinesigortabtn"
+        />
 
+</group>
+
+
+
+<group android:id="@+id/online_bilet_grup">
 
     <item
 
         android:icon="@drawable/online_bilet"
-        android:title="Online Bilet" />
+        android:title="Online Bilet"
+        android:id="@+id/onlinebiletbtn"
+        />
+
+</group>
+
+
+
+
+<group android:id="@+id/duyurular_grup">
 
     <item
 
         android:icon="@drawable/duyurular"
-        android:title="Duyurular" />
+        android:title="Duyurular"
+android:id="@+id/duyurularbtn"
+        />
+</group>
+
+
+
+<group android:id="@+id/cikis_yap_grup">
 
     <item
 
         android:icon="@drawable/cikis_yap"
         android:title="Çıkış Yap"
-android:id="@+id/logoutbtn"
+        android:id="@+id/logoutbtn"
         />
+
+</group>
+
+
+
+
+
+
 
 
 

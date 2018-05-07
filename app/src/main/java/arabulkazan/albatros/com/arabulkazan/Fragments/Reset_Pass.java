@@ -39,17 +39,32 @@ Button btn;
             public void onClick(View view) {
 
 
-                Data.resetpw(Reset_Pass.this.getActivity(), tc.getText().toString(), telno.getText().toString(), new Data.OnPostExecuteListener() {
+                Data.resetpw(Reset_Pass.this.getActivity(), tc.getText().toString(),telno.getText().toString(), new Data.OnPostExecuteListener() {
                     @Override
                     public void onPostExecute(String result) {
                         final Result sonuc=new Gson().fromJson(result,Result.class);
                         try {
 
                             if(sonuc.getMesaj().equals("Şifre başarıyla yenilendi!")){//Buralar degisicek
-                                Toast.makeText(getContext(),"Tebrikler başarıyla şifrenizi sıfırladınız", Toast.LENGTH_SHORT);
+                                Toast.makeText(getContext(),"Tebrikler başarıyla şifrenizi sıfırladınız", Toast.LENGTH_SHORT).show();
+
+                                //Burada tekrar giriş sayfasına yöneltilebilir.
+                                anasayfa_giris anasayfa_giris=new anasayfa_giris();
+
+                                getActivity().getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.frameLayout,anasayfa_giris,"anasayfagiris")
+                                        .addToBackStack(null)
+                                        .commit();
+
+                            }
+                            else if(sonuc.getMesaj().equals("Bu kadar sıklıkla şifrenizi değiştiremezsiniz!")){
+                                Toast.makeText(getContext(),"Bu kadar sıklıkla şifrenizi değiştiremezsiniz!", Toast.LENGTH_SHORT).show();
+                            }
+                            else if(sonuc.getMesaj().equals("TC VE/VEYA TELEFON Yanlış!")){
+                                Toast.makeText(getContext(),"Girmiş Olduğunuz T.C ve/veya telefon numarası yanlış.Tekrar Deneyin!", Toast.LENGTH_SHORT).show();
                             }
                             else{
-                                Toast.makeText(getContext(),"Bu kadar sıklıkla şifrenizi değiştiremezsiniz!", Toast.LENGTH_SHORT);
+                                Toast.makeText(getContext(),"Bilinmeyen Bir Hata Oluştu!", Toast.LENGTH_SHORT).show();
                             }
 
 

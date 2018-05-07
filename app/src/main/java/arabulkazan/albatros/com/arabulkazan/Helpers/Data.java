@@ -137,11 +137,11 @@ public class Data {
 
     }
 
-    public static void activate_member(Activity act,String telno, final OnPostExecuteListener postExecuteListener) {
+    public static void activate_member(Activity act,String tc, final OnPostExecuteListener postExecuteListener) {
 
         ArrayList<NameValuePair> am = new ArrayList<>();
         am.add(new BasicNameValuePair("act", "activation_member"));
-        am.add(new BasicNameValuePair("telno",telno));
+        am.add(new BasicNameValuePair("tc",tc));
 
         new HttpGonderim(act, Constants.REST_URL, am, false, new HttpGonderim.OnPostExecuteListener() {
             @Override
@@ -158,13 +158,13 @@ public class Data {
     }
 
 
-    public static void send_new_sms_kod(Activity act,String adi,String soyadi,String telno, final OnPostExecuteListener postExecuteListener) {
+    public static void send_new_sms_kod(Activity act,String tc, final OnPostExecuteListener postExecuteListener) {
 
         ArrayList<NameValuePair> am = new ArrayList<>();
         am.add(new BasicNameValuePair("act", "send_new_sms_kod"));
-        am.add(new BasicNameValuePair("adi",telno));
-        am.add(new BasicNameValuePair("soyadi",telno));
-        am.add(new BasicNameValuePair("telefonNum",telno));
+      //  am.add(new BasicNameValuePair("adi",telno));
+       // am.add(new BasicNameValuePair("soyadi",telno));
+        am.add(new BasicNameValuePair("tc",tc));
 
         new HttpGonderim(act, Constants.REST_URL, am, false, new HttpGonderim.OnPostExecuteListener() {
             @Override
@@ -200,6 +200,29 @@ public class Data {
             }
         }).execute();
 
+
+    }
+
+
+    public static void updatepw(Activity act, String tc, String pass,String newpass, final OnPostExecuteListener postExecuteListener) {
+
+
+        ArrayList<NameValuePair> pt = new ArrayList<>();
+        pt.add(new BasicNameValuePair("act", "update_pass"));
+        pt.add(new BasicNameValuePair("tc",tc));
+        pt.add(new BasicNameValuePair("pass",pass));
+        pt.add(new BasicNameValuePair("newpass",newpass));
+
+        new HttpGonderim(act, Constants.REST_URL, pt, false, new HttpGonderim.OnPostExecuteListener() {
+            @Override
+            public void onPostExecute(String result) {
+
+                if (postExecuteListener != null) {
+                    postExecuteListener.onPostExecute(result);
+
+                }
+            }
+        }).execute();
 
     }
 

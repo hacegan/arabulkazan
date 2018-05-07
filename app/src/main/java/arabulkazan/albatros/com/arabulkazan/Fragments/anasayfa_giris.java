@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -24,6 +25,7 @@ public class anasayfa_giris extends android.support.v4.app.Fragment {
 
     Button btn;
     EditText tc, pass;
+    TextView resetpw;
 
     @Nullable
     @Override
@@ -33,6 +35,23 @@ public class anasayfa_giris extends android.support.v4.app.Fragment {
         btn = root.findViewById(R.id.button3);
         tc = root.findViewById(R.id.editText2);
         pass = root.findViewById(R.id.editText3);
+
+        resetpw=root.findViewById(R.id.textView);
+
+        resetpw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Reset_Pass nextFrag= new Reset_Pass();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frameLayout, nextFrag,"Reset_Pass")
+                        .addToBackStack(null)
+                        .commit();
+
+
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,11 +65,14 @@ public class anasayfa_giris extends android.support.v4.app.Fragment {
                         try {
 
                             if (sonuc.getError().equals("0")) {//Buralar degisicek
-                                Toast.makeText(getContext(), "Tebrikler başarıyla giriş yapıyorsunuz!", Toast.LENGTH_LONG);
+                                Toast.makeText(getContext(), "Tebrikler başarıyla giriş yapıyorsunuz!", Toast.LENGTH_LONG).show();
 
 
                                 UI.setString(getContext(),"pass",pass.getText().toString());
                                 UI.setString(getContext(),"tc",tc.getText().toString());
+                                UI.setString(getContext(),"myReferans",sonuc.getMyReferans());
+
+
 
                                 Intent i = new Intent(anasayfa_giris.this.getContext(),MainActivity.class);
                                 startActivity(i);
@@ -63,17 +85,20 @@ public class anasayfa_giris extends android.support.v4.app.Fragment {
 
 
                             } else if (sonuc.getMesaj().equals("Aktifleştirilmemiş Hesap!")) {
-                                 Toast.makeText(getContext(),"Hesabınızı aktifleştirmeniz gerekiyor!", Toast.LENGTH_SHORT);
+                                 Toast.makeText(getContext(),"Hesabınızı aktifleştirmeniz gerekiyor!", Toast.LENGTH_SHORT).show();
+
+                                UI.setString(getContext(),"tc",tc.getText().toString());
 
                                 Register_Tel_Sifre register_tel_sifre=new Register_Tel_Sifre();
                                 android.support.v4.app.FragmentTransaction  transaction =anasayfa_giris.this.getActivity().getSupportFragmentManager().beginTransaction();
-                                transaction.add(R.id.frameLayout,register_tel_sifre);
+                                transaction.replace(R.id.frameLayout,register_tel_sifre,"Register_Tel_Sifre");
+                             //   transaction.addToBackStack("Register_Tel_Sifre");
                                 transaction.commit();
 
 
                             }
                             else if(sonuc.getMesaj().equals("T.C Kimlik No ve/veya Şifre Yanlış Lütfen Tekrar Deneyin!")){
-                                Toast.makeText(getContext(),"T.C Kimlik No ve/veya Şifre Yanlış Lütfen Tekrar Deneyin!", Toast.LENGTH_SHORT);
+                                Toast.makeText(getContext(),"T.C Kimlik No ve/veya Şifre Yanlış Lütfen Tekrar Deneyin!", Toast.LENGTH_SHORT).show();
                             }
 
 

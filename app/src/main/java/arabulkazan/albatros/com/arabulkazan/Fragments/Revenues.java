@@ -57,10 +57,10 @@ Button anket_doldur,takiple_kazan,gizli_musteri,hizmet_kazancı;
         gizli_musteri=root.findViewById(R.id.gizli_musteri_btn);
         hizmet_kazancı=root.findViewById(R.id.hizmet_kazanci_btn);
 
-        anket_doldur.setOnClickListener(this);
-        takiple_kazan.setOnClickListener(this);
-        gizli_musteri.setOnClickListener(this);
-        hizmet_kazancı.setOnClickListener(this);//layout dosyası editlenecek ve buralar aktif hale gelicek.
+//        anket_doldur.setOnClickListener(this);
+//        takiple_kazan.setOnClickListener(this);
+//        gizli_musteri.setOnClickListener(this);
+//        hizmet_kazancı.setOnClickListener(this);//layout dosyası editlenecek ve buralar aktif hale gelicek.
 
         zenmiktar=root.findViewById(R.id.zencounttxt);
 
@@ -187,6 +187,7 @@ Button anket_doldur,takiple_kazan,gizli_musteri,hizmet_kazancı;
                         new RewardedVideoAdListener() {
                             @Override
                             public void onRewardedVideoAdLoaded() {
+                                System.out.println("Reklam Yüklendi!");
                                 gecis.show();
                                 btn.setEnabled(true);
                             }
@@ -213,7 +214,7 @@ Button anket_doldur,takiple_kazan,gizli_musteri,hizmet_kazancı;
                                 Toast.makeText(getContext(), "Tebrikler kazancınız hesabınıza eklendi.", Toast.LENGTH_SHORT).show();
 
 
-                                Data.kazancim(Revenues.this.getActivity(), "36233263110", "5fca1c413e0ecc5c7f6a27330394c913f3595bc8",videoit,videoft, new Data.OnPostExecuteListener() {
+                                Data.kazancim(Revenues.this.getActivity(), UI.getString(Revenues.this.getActivity(),"tc"), UI.getString(Revenues.this.getActivity(),"pass"),videoit,videoft, new Data.OnPostExecuteListener() {
                                     @Override
                                     public void onPostExecute(String result) {
                                         final Result sonuc = new Gson().fromJson(result, Result.class);

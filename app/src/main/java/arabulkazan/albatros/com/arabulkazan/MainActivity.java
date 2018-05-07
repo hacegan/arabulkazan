@@ -1,7 +1,10 @@
 package arabulkazan.albatros.com.arabulkazan;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,6 +17,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.util.Log;
+import android.util.Size;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +29,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.daimajia.slider.library.SliderLayout;
@@ -36,6 +41,7 @@ import arabulkazan.albatros.com.arabulkazan.Fragments.Register;
 import arabulkazan.albatros.com.arabulkazan.Fragments.Revenues;
 import arabulkazan.albatros.com.arabulkazan.Fragments.Settings;
 import arabulkazan.albatros.com.arabulkazan.Fragments.SizeOzel;
+import arabulkazan.albatros.com.arabulkazan.Fragments.Update_Pass;
 import arabulkazan.albatros.com.arabulkazan.Helpers.UI;
 
 import static arabulkazan.albatros.com.arabulkazan.R.string.drawer_close;
@@ -83,6 +89,7 @@ private NavigationView nav_drawer;
     Revenues revenuesFrag;
     MyWallet myWalletFrag;
     SizeOzel sizeOzelFrag;
+    Update_Pass updatePassFrag;
     public static ViewPager viewPager;
     MenuItem prevMenuItem;
     FrameLayout frameAnaSayfa;
@@ -94,10 +101,12 @@ private NavigationView nav_drawer;
         revenuesFrag=new Revenues();
         myWalletFrag=new MyWallet();
         sizeOzelFrag=new SizeOzel();
+        updatePassFrag=new Update_Pass();
         adapter.addFragment(mainFrag);
         adapter.addFragment(revenuesFrag);
         adapter.addFragment(myWalletFrag);
         adapter.addFragment(sizeOzelFrag);
+        adapter.addFragment(updatePassFrag);
         viewPager.setAdapter(adapter);
 
     }
@@ -144,7 +153,6 @@ private NavigationView nav_drawer;
                                         Anasayfa_Giris_Kaydol nextFrag= new Anasayfa_Giris_Kaydol();
                                         MainActivity.this.getSupportFragmentManager().beginTransaction()
                                                 .replace(R.id.frameLayout, nextFrag,"findThisFragment")
-                                                .addToBackStack(null)
                                                 .commit();
 
                                         Intent i = MainActivity.this.getPackageManager()
@@ -167,6 +175,28 @@ private NavigationView nav_drawer;
                         );
 
                         break;
+
+
+                    case R.id.isletmemagazambtn:
+                        Toast.makeText(getApplicationContext(),"Yakında...",Toast.LENGTH_SHORT).show(); break;
+                    case R.id.emlakalsatkiralabtn:
+                        Toast.makeText(getApplicationContext(),"Yakında...",Toast.LENGTH_SHORT).show();break;
+                    case R.id.alisverisbtn:
+                        Toast.makeText(getApplicationContext(),"Yakında...",Toast.LENGTH_SHORT).show();break;
+                    case R.id.toplusmsbtn:
+                        Toast.makeText(getApplicationContext(),"Yakında...",Toast.LENGTH_SHORT).show();break;
+                    case R.id.onlinerentacarbtn:
+                        Toast.makeText(getApplicationContext(),"Yakında...",Toast.LENGTH_SHORT).show();break;
+                    case R.id.onlineegitimbtn:
+                        Toast.makeText(getApplicationContext(),"Yakında...",Toast.LENGTH_SHORT).show();break;
+                    case R.id.onlinefaturabtn:
+                        Toast.makeText(getApplicationContext(),"Yakında...",Toast.LENGTH_SHORT).show();break;
+                    case R.id.onlinesigortabtn:
+                        Toast.makeText(getApplicationContext(),"Yakında...",Toast.LENGTH_SHORT).show();break;
+                    case R.id.onlinebiletbtn:
+                        Toast.makeText(getApplicationContext(),"Yakında...",Toast.LENGTH_SHORT).show();break;
+                    case R.id.duyurularbtn:
+                        Toast.makeText(getApplicationContext(),"Yakında...",Toast.LENGTH_SHORT).show();break;
 
 
 
@@ -235,7 +265,7 @@ private NavigationView nav_drawer;
             navigation.setVisibility(View.GONE);
 
             android.support.v4.app.FragmentTransaction  transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frameLayout,fragmentAnaSayfa);
+            transaction.add(R.id.frameLayout,fragmentAnaSayfa,"Anasayfa_Giris_Kaydol");
             transaction.commit();
 
 
@@ -342,4 +372,91 @@ return  true;
 
 
     }
+
+
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        adapter.notifyDataSetChanged();
+//        System.out.println("Main aCTİVİTY ONRESUMEDE");
+//    }
+
+
+    @Override
+    public void onBackPressed() {
+
+        //android.support.v4.app.Fragment sizeOzel=getSupportFragmentManager().findFragmentByTag("SizeOzel");
+
+
+
+
+//        if (getFragmentManager().getBackStackEntryCount() == 0) {
+//            // add your code here
+//this.finish();
+//        }
+//
+//        else {
+//            getFragmentManager().popBackStack();
+//        }
+
+
+
+//            AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);//if main fragment currently displayed.Check it!
+//
+//
+//            // Setting Dialog Title
+//
+//            alertDialog.setTitle("Uygulamadan ayrılıyor musun?");
+//
+//            // Setting Dialog Message
+//
+//            alertDialog.setMessage("Uygulamadan ayrılmak istiyor musunuz?");
+//
+//            // Setting Icon to Dialog
+//
+//            //  alertDialog.setIcon(R.layout.);
+//
+//            // Setting Positive "Yes" Button
+//
+//            alertDialog.setPositiveButton("EVET",
+//
+//                    new DialogInterface.OnClickListener() {
+//
+//                        public void onClick(DialogInterface dialog, int which) {
+//
+//                            finishAffinity();
+//
+//                        }
+//
+//                    });
+//
+//            // Setting Negative "NO" Button
+//
+//            alertDialog.setNegativeButton("HAYIR",
+//
+//                    new DialogInterface.OnClickListener() {
+//
+//                        public void onClick(DialogInterface dialog, int which) {
+//
+//                            // Write your code here to invoke NO event
+//
+//                            dialog.cancel();
+//
+//                        }
+//
+//                    });
+//
+//            // Showing Alert Message
+//
+//            alertDialog.show();
+
+
+
+       // return;
+    }
+
+
+
+
+
 }

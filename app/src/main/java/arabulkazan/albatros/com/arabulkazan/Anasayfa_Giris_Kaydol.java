@@ -36,7 +36,7 @@ Button loginbtn,registerbtn;
 
                 anasayfa_giris nextFrag= new anasayfa_giris();
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frameLayout, nextFrag,"findThisFragment")
+                        .replace(R.id.frameLayout, nextFrag,"anasayfa_giris")
                         .addToBackStack(null)
                         .commit();
 
@@ -67,7 +67,7 @@ Button loginbtn,registerbtn;
 
                 Register nextFrag= new Register();
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frameLayout, nextFrag,"findThisFragment")
+                        .replace(R.id.frameLayout, nextFrag,"Register")
                         .addToBackStack(null)
                         .commit();
 

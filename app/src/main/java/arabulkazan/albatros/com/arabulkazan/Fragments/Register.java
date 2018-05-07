@@ -89,7 +89,7 @@ try{
 
     Register_Tel_Sifre register_tel_sifre=new Register_Tel_Sifre();
     android.support.v4.app.FragmentTransaction  transaction =Register.this.getActivity().getSupportFragmentManager().beginTransaction();
-    transaction.replace(R.id.frameLayout,register_tel_sifre);
+    transaction.replace(R.id.frameLayout,register_tel_sifre,"Register_Tel_Sifre");
     transaction.commit();
 
 

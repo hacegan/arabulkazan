@@ -69,15 +69,15 @@
             android:hint="Kobi Adı  / Ürün / Kategori / Sektör / Adres   "
             android:textSize="15sp"
             android:background="@drawable/expandable_list_bg"
-
+            android:editable="false"
             />
 
         <Button
+            android:id="@+id/anasayfa_arama_btn"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/arama_icon"
             android:layout_marginLeft="3dp"
-            />
+            android:background="@drawable/arama_icon" />
 
 
     </LinearLayout>

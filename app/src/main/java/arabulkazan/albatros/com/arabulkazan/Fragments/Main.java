@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
@@ -23,7 +24,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import arabulkazan.albatros.com.arabulkazan.Adapters.Exp_Main_Fragment_List_Adapter;
 
 import arabulkazan.albatros.com.arabulkazan.MainActivity;
 import arabulkazan.albatros.com.arabulkazan.R;
@@ -35,20 +35,13 @@ import arabulkazan.albatros.com.arabulkazan.R;
 
 public class Main extends android.support.v4.app.Fragment {
   private  static SliderLayout sliderShow;
-  private Button sizeozelbtn;
-
-private ExpandableListView exp_gunfirsat,exp_on_egitim,exp_on_ar_kir,exp_on_sig,exp_on_fa;
-
-    public static List<String> groupList = null;
-    public  static Map<String, List<String>> childListMap = null;
+  private Button sizeozelbtn,aramabtn;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root=inflater.inflate(R.layout.fragment_main_page, container, false);
-
-
 
 
 
@@ -112,7 +105,18 @@ private ExpandableListView exp_gunfirsat,exp_on_egitim,exp_on_ar_kir,exp_on_sig,
             }
         });*/
 
+aramabtn=root.findViewById(R.id.anasayfa_arama_btn);
 
+aramabtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+
+        Toast.makeText(Main.this.getActivity(),"Yakında...",Toast.LENGTH_SHORT).show();
+
+
+
+    }
+});
 
 
 
@@ -137,7 +141,7 @@ private ExpandableListView exp_gunfirsat,exp_on_egitim,exp_on_ar_kir,exp_on_sig,
 //            fragmentTransaction.replace(R.id.container,sizeOzel);
 //            fragmentTransaction.commit();
 
-            MainActivity.viewPager.setCurrentItem(MainActivity.viewPager.getAdapter().getCount()-1);
+            MainActivity.viewPager.setCurrentItem(MainActivity.viewPager.getAdapter().getCount()-2);
 
 
 
